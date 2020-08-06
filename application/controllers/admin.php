@@ -33,11 +33,11 @@ class admin extends CI_Controller
         $nama = urldecode($nama);
 
         $data['info'] = $this->M_Detail->tampil($nama);
-        $data['file'] = $this->M_Detail->listfile($nama);
+        $data['files'] = $this->M_Detail->listfile($nama);
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view('admin/detail', $data);
-        $this->load->view("template/footer", $data); // kirim data ke view
+        // $this->load->view("template/footer", $data); // kirim data ke view
     }
 
     public function download($folder)
