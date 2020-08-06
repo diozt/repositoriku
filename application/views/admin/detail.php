@@ -425,6 +425,20 @@
                         <div class="d-inline-block">
 
                             <!-- <a href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>" class="btn btn-success btn-sm">Download</a> -->
+                            <a class="btn-shadow btn btn-danger" href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>">
+                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                    <i class="fa pe-7s-trash fa-w-10"></i>
+                                </span>
+                                Remove
+                            </a>
+
+                            <a class="btn-shadow btn btn-primary" href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>">
+                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                    <i class="fa pe-7s-upload fa-w-10"></i>
+                                </span>
+                                Edit
+                            </a>
+
                             <a class="btn-shadow btn btn-info" href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-download fa-w-10"></i>
