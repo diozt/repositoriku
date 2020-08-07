@@ -488,7 +488,7 @@
                                                 <center>
                                                     <th class="text-center">No</th>
                                                     <th class="text-center">File Name</th>
-                                                    <th class="text-center">Entry Date</th>
+                                                    <th class="text-center">Entry Time</th>
                                                     <!-- <th class="text-center">Status</th> -->
                                                     <th class="text-center">Actions</th>
                                                 </center>
@@ -523,13 +523,13 @@
                                                     </td>
 
                                                     <!-- Description -->
-                                                    <td class="text-center"><?php echo $file->tglentri; ?></td>
+                                                    <td class="text-center"><?php echo time_elapsed_string($file->tglentri); ?></td>
 
                                                     <!-- Actions -->
                                                     <td class="text-center">
                                                         <?php $parameter = array($file->id, $file->nama) ?>
                                                         <a href="<?php echo base_url() . "admin/detail/" . $file->nama ?>" class="mb-1 mr-1 btn btn-primary btn-sm">Details</a>
-                                                        <a class="mb-1 mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/". $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>">Edit</a>
+                                                        <a class="mb-1 mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>">Edit</a>
                                                         <button class="mb-1 mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove">Remove</button>
 
 
@@ -612,6 +612,37 @@
                 $('table.display').DataTable();
             });
         </script>
+        <?php
+        function time_elapsed_string($datetime, $full = false)
+        {
+            $now = new DateTime;
+            $ago = new DateTime($datetime);
+            $diff = $now->diff($ago);
+
+            $diff->w = floor($diff->d / 7);
+            $diff->d -= $diff->w * 7;
+
+            $string = array(
+                'y' => 'year',
+                'm' => 'month',
+                'w' => 'week',
+                'd' => 'day',
+                'h' => 'hour',
+                'i' => 'minute',
+                's' => 'second',
+            );
+            foreach ($string as $k => &$v) {
+                if ($diff->$k) {
+                    $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+                } else {
+                    unset($string[$k]);
+                }
+            }
+
+            if (!$full) $string = array_slice($string, 0, 1);
+            return $string ? implode(', ', $string) . ' ago' : 'just now';
+        }
+        ?>
         </body>
 
         </html>

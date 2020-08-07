@@ -12,7 +12,7 @@ class admin extends CI_Controller
     }
     public function index()
     {
-        
+
         $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
@@ -48,7 +48,29 @@ class admin extends CI_Controller
 
         $data['info'] = $this->M_Detail->tampil($nama);
         $data['files'] = $this->M_Detail->listfile($nama);
+
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+
+        $data["du"] = $this->db->get_where('dataumum', ['id' => $id])->row_array();
+        $data["fu"] = $this->db->get_where('fungsiutama', ['id' => $id])->row_array();
+        $data["jl"] = $this->db->get_where('jenislayanan', ['id' => $id])->row_array();
+        $data["sp"] = $this->db->get_where('sistempengaman', ['id' => $id])->row_array();
+        $data["st"] = $this->db->get_where('sistemterkait', ['id' => $id])->row_array();
+        $data["stf"] = $this->db->get_where('sertifikasi', ['id' => $id])->row_array();
+        $data["pl"] = $this->db->get_where('penggunalayanan', ['id' => $id])->row_array();
+        $data["plg"] = $this->db->get_where('penyelenggara', ['id' => $id])->row_array();
+        $data["pku"] = $this->db->get_where('pkutama', ['id' => $id])->row_array();
+        $data["pkk"] = $this->db->get_where('pkkhusus', ['id' => $id])->row_array();
+        $data["plu"] = $this->db->get_where('plutama', ['id' => $id])->row_array();
+        $data["plp"] = $this->db->get_where('plpendukung', ['id' => $id])->row_array();
+        $data["ta"] = $this->db->get_where('tenagaahli', ['id' => $id])->row_array();
+        $data["kta"] = $this->db->get_where('ketersediaanta', ['id' => $id])->row_array();
+        $data["dh"] = $this->db->get_where('dasarhukum', ['id' => $id])->row_array();
+        $data["sop"] = $this->db->get_where('sop', ['id' => $id])->row_array();
+        $data["pj"] = $this->db->get_where('penanggungjawab', ['nip' => $pj])->row_array();
+        $data["hd"] = $this->db->get_where('helpdesk', ['id' => $id])->row_array();
+        // print_r($data["jl"]);
+
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view('admin/edit', $data);
         $this->load->view("template/footer", $data); // kirim data ke view
