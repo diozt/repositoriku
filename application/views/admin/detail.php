@@ -425,21 +425,21 @@
                         <div class="d-inline-block">
 
                             <!-- <a href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>" class="btn btn-success btn-sm">Download</a> -->
-                            <button class="btn-shadow btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                            <button class="mb-2 mr-2 btn-shadow btn btn-danger" data-toggle="modal" data-target="#popupRemove">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-trash fa-w-10"></i>
                                 </span>
-                                Remove
+                            Remove
                             </button>
 
-                            <a class="btn-shadow btn btn-primary" href="<?php echo base_url() . "admin/edit/" . $informasi->nama ?>">
+                            <a class="mb-2 mr-2 btn-shadow btn btn-info" href="<?php echo base_url() . "admin/edit/" . $informasi->nama ?>">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-upload fa-w-10"></i>
                                 </span>
                                 Edit
                             </a>
 
-                            <a class="btn-shadow btn btn-info" href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>">
+                            <a class="mb-2 mr-2 btn-shadow btn btn-alternate" href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-download fa-w-10"></i>
                                 </span>
@@ -815,7 +815,7 @@
 
 <!--  Modal -->
 <?php foreach ($info as $file) : ?>
-    <div class="modal" tabindex="1000" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

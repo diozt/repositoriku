@@ -528,8 +528,9 @@
                                                     <!-- Actions -->
                                                     <td class="text-center">
                                                         <?php $parameter = array($file->id, $file->nama) ?>
-                                                        <a href="<?php echo base_url() . "admin/detail/" . $file->nama ?>" class="btn btn-primary btn-sm">Details</a>
-                                                        <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">Remove</button>
+                                                        <a href="<?php echo base_url() . "admin/detail/" . $file->nama ?>" class="mb-1 mr-1 btn btn-primary btn-sm">Details</a>
+                                                        <a class="mb-1 mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/". $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>">Edit</a>
+                                                        <button class="mb-1 mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove">Remove</button>
 
 
 
@@ -583,7 +584,7 @@
 
         <!--  Modal -->
         <?php foreach ($files as $file) : ?>
-            <div class="modal" tabindex="1000" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">

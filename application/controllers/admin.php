@@ -12,6 +12,7 @@ class admin extends CI_Controller
     }
     public function index()
     {
+        
         $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
@@ -38,6 +39,19 @@ class admin extends CI_Controller
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view('admin/detail', $data);
         // $this->load->view("template/footer", $data); // kirim data ke view
+    }
+
+    public function edit($id, $nama, $pj)
+    {
+        // %20 to space
+        $nama = urldecode($nama);
+
+        $data['info'] = $this->M_Detail->tampil($nama);
+        $data['files'] = $this->M_Detail->listfile($nama);
+        $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $this->load->view("template/header", $data); // kirim data ke view
+        $this->load->view('admin/edit', $data);
+        $this->load->view("template/footer", $data); // kirim data ke view
     }
 
     public function download($folder)
