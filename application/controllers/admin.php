@@ -42,6 +42,8 @@ class admin extends CI_Controller
 
     public function download($folder)
     {
+        // %20 to space
+        $folder = urldecode($folder);
         // File name
         $filename = $folder . ".zip";
         // Directory path (uploads directory stored in project root)

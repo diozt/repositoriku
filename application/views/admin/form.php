@@ -541,10 +541,10 @@
                                                    <div class="position-relative form-group"><label>Tanggal Mulai</label>
                                                        <input type="text" name="tglmulai" placeholder="Tanggal Mulai Berlaku" onfocus="(this.type='date')" class="form-control" id="tglmulai" style="margin-bottom: 10px;">
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Masa Laku</label>
+                                                   <div class="position-relative form-group"><label>Tanggal Habis Berlaku</label>
                                                        <input type="text" name="tglhabis" placeholder="Tanggal Habis Berlaku" onfocus="(this.type='date')" class="form-control" id="tglhabis" style="margin-bottom: 10px;">
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Nama Sistem Terkait</label>
+                                                   <div class="position-relative form-group"><label>Masa Laku</label>
                                                        <input type="text" name="masalaku" placeholder="Masa Berlaku (Tahun)" class="form-control" id="masalaku" style="margin-bottom: 10px;">
                                                    </div>
                                                    <div class="position-relative form-group"><label>Nomor Sertifikat</label>
@@ -573,7 +573,7 @@
                                                <div class="card-body">
                                                    <h2 class="card-title mb-3 mt-4">Satuan Kerja</h2>
                                                    <div class="position-relative form-group"><label>Nama Satuan Kerja</label>
-                                                       <input type="text" name="namask" placeholder="Nama Sistem Elektronik" class="form-control" id="namask" style="margin-bottom: 10px;" class=" form-control">
+                                                       <input type="text" name="namask" placeholder="Nama Satuan Kerja" class="form-control" id="namask" style="margin-bottom: 10px;" class=" form-control">
                                                    </div>
                                                    <div class="position-relative form-group"><label>Alamat</label>
                                                        <input type="text" name="alamatsk" placeholder="Alamat Satuan Kerja" class="form-control" id="alamatsk" style="margin-bottom: 10px;">

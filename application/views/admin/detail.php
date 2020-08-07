@@ -429,10 +429,10 @@
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-trash fa-w-10"></i>
                                 </span>
-                            Remove
+                                Remove
                             </button>
 
-                            <a class="btn-shadow btn btn-primary" href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>">
+                            <a class="btn-shadow btn btn-primary" href="<?php echo base_url() . "admin/edit/" . $informasi->nama ?>">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-upload fa-w-10"></i>
                                 </span>
@@ -467,7 +467,216 @@
                                                 </div>########## -->
                             </div>
                         </div>
+                        <!-- =============================================================================== -->
+                        <div class="col-md-12">
+                            <div id="accordion" class="accordion-wrapper">
+                                <div class="card">
+                                    <div id="headingOne" class="card-header">
+                                        <button type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
+                                            <h5 class="m-0 p-0">Data Umum</h5>
+                                        </button>
+                                    </div>
+                                    <div data-parent="#accordion" id="collapseOne1" aria-labelledby="headingOne" class="collapse show">
+                                        <div class="card-body">
+                                            <div class="col-md-12">
+                                                <div class="main-card card">
+                                                    <div class="card-body">
+                                                        <table class="mb-3 table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td width="30%">ID</td>
+                                                                    <td>: Otto</td>
+                                                                </tr>
 
+                                                                <tr>
+                                                                    <td width="30%">Nama Sistem Elektronik</td>
+                                                                    <td>:</td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Sasaran Pelayanan</td>
+                                                                    <td>:</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Kategori Sistem Elektronik</td>
+                                                                    <td>:</td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Kategori Akses</td>
+                                                                    <td>:</td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Alamat URL</td>
+                                                                    <td>:</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h5 class="card-title mt-3 mb-0">Fungsi Yang Dimiliki</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Fungsi </td>
+                                                                    <td>: Fungsi </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Keterangan</td>
+                                                                    <td>: Keterangan</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="35%">
+                                                                        <h5 class="card-title mt-3 mb-1">Ruang Lingkup Sistem Elektronik</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Ruang Lingkup</td>
+                                                                    <td>: </td>
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h5 class="card-title mt-3 mb-1">Jenis Layanan Sistem Elektronik</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Jenis Layanan </td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h5 class="card-title mt-3 mb-1">Sistem Pengaman</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="40%">Nama Sistem Pengaman</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h5 class="card-title mt-3 mb-1">Sistem Terkait</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Nama Sistem Terkait</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <h5 class="card-title mt-3 mb-1">Sertifikasi</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Nama Sertifikat</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Nama Institusi</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Tanggal Terbit</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Tanggal Mulai Berlaku</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Tanggal Habis Berlaku</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Masa Laku (Tahun)</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Nomor Sertifikat</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Ruang Lingkup</td>
+                                                                    <td>: </td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <td>
+                                                                        <h5 class="card-title mt-3 mt-1">Penguna Layanan Sistem Elektronik</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Jenis Pengguna</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Keterangan</td>
+                                                                    <td>: </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div id="headingTwo" class="b-radius-0 card-header">
+                                        <button type="button" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseTwo" class="text-left m-0 p-0 btn btn-link btn-block">
+                                            <h5 class="m-0 p-0">Data Pendukung</h5>
+                                        </button>
+                                    </div>
+                                    <div data-parent="#accordion" id="collapseOne2" class="collapse">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Satuan Kerja</h5>
+                                            <ul class="list-group mb-4">
+                                                <li class="list-group-item">Nama Satuan kerja</li>
+                                                <li class="list-group-item">Alamat Satuan Kerja</li>
+                                                <li class="list-group-item">Provinsi</li>
+                                                <li class="list-group-item">Kabupaten / Kota</li>
+                                                <li class="list-group-item">Kode POS</li>
+                                                <li class="list-group-item">No HP</li>
+                                                <li class="list-group-item">Alamat URL</li>
+                                            </ul>
+                                            <h5 class="card-title">Hardware Utama</h5>
+                                            <ul class="list-group mb-4">
+                                                <li class="list-group-item">Jenis Hardware</li>
+                                                <li class="list-group-item">Pemilik</li>
+                                                <li class="list-group-item">Penyedia Data Center</li>
+                                                <li class="list-group-item">Bandwith</li>
+                                                <li class="list-group-item">Jumlah Hardware</li>
+                                                <li class="list-group-item">Tipe</li>
+                                                <li class="list-group-item">Processor</li>
+                                                <li class="list-group-item">RAM</li>
+                                                <li class="list-group-item">Lokasi</li>
+                                            </ul>
+                                            <h5 class="card-title">Hardware Khusus</h5>
+                                            <ul class="list-group mb-4">
+                                                <li class="list-group-item">Jenis Hardware Khusus</li>
+                                                <li class="list-group-item">Tipe</li>
+                                                <li class="list-group-item">Keterangan</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div id="headingThree" class="card-header">
+                                        <button type="button" data-toggle="collapse" data-target="#collapseOne3" aria-expanded="false" aria-controls="collapseThree" class="text-left m-0 p-0 btn btn-link btn-block">
+                                            <h5 class="m-0 p-0">File Pendukung</h5>
+                                        </button>
+                                    </div>
+                                    <div data-parent="#accordion" id="collapseOne3" class="collapse">
+                                        <div class="card-body">3. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                                            nesciunt
+                                            laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                                            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
+                                            VHS.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- =============================================================================== -->
                         <!-- <div style="display: block;"> -->
                         <div class="card-body">
                             <h5 class="card-title">App Information</h5>
@@ -525,21 +734,21 @@
                                 </div>
                                 <div class="tab-pane" id="tab-eg5-1" role="tabpanel">
                                     <p>
-                                        <?php foreach ($file as $listfile) : ?>
+                                        <?php foreach ($files as $listfile) : ?>
                                             <p><?php echo $listfile->sCode ?></p>
                                         <?php endforeach; ?>
                                     </p>
                                 </div>
                                 <div class="tab-pane" id="tab-eg5-2" role="tabpanel">
                                     <p>
-                                        <?php foreach ($file as $listfile) : ?>
+                                        <?php foreach ($files as $listfile) : ?>
                                             <p><?php echo $listfile->dbMaster ?></p>
                                         <?php endforeach; ?>
                                     </p>
                                 </div>
                                 <div class="tab-pane" id="tab-eg5-3" role="tabpanel">
                                     <p>
-                                        <?php foreach ($file as $listfile) : ?>
+                                        <?php foreach ($files as $listfile) : ?>
                                             <p><?php echo $listfile->lainnya ?></p>
                                         <?php endforeach; ?>
                                     </p>
@@ -567,25 +776,27 @@
 
                     </div>
                 </div>
+
             </div>
+
 
         </div>
 
-<div class="app-wrapper-footer">
-    <div class="app-footer">
-        <div class="app-footer__inner">
-            <div class="app-footer-left">
-                <ul class="nav">
-                    <li class="nav-item" style="text-align: center;">
+        <div class="app-wrapper-footer">
+            <div class="app-footer">
+                <div class="app-footer__inner">
+                    <div class="app-footer-left">
+                        <ul class="nav">
+                            <li class="nav-item" style="text-align: center;">
 
-                        <a href="javascript:void(0);" class="nav-link">
-                            Kominfo Kota Kediri
-                        </a>
+                                <a href="javascript:void(0);" class="nav-link">
+                                    Kominfo Kota Kediri
+                                </a>
 
-                    </li>
-                </ul>
-            </div>
-            <!-- <div class="app-footer-right">
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <div class="app-footer-right">
                 <ul class="nav">
                     <li class="nav-item">
                         <a href="javascript:void(0);" class="nav-link">
@@ -594,36 +805,36 @@
                     </li>
                 </ul>
             </div> -->
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
-<!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
 </div>
 </div>
 
 <!--  Modal -->
-        <?php foreach ($info as $file) : ?>
-            <div class="modal" tabindex="1000" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            Are you sure to delete this?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <a href="<?php echo base_url() . "admin/delete/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab  ?>" class="btn btn-danger">Yes</a>
-                        </div>
-                    </div>
+<?php foreach ($info as $file) : ?>
+    <div class="modal" tabindex="1000" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure to delete this?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <a href="<?php echo base_url() . "admin/delete/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab  ?>" class="btn btn-danger">Yes</a>
                 </div>
             </div>
-        <?php endforeach; ?>
+        </div>
+    </div>
+<?php endforeach; ?>
 
 <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
 
