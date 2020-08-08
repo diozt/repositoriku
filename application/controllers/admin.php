@@ -95,6 +95,22 @@ class admin extends CI_Controller
         $this->zip->download($filename);
     }
 
+    public function recursiveRmDir($dir)
+    {
+
+        // $dir = './upload/Mantab/v1/';
+        $iterator = new RecursiveIteratorIterator(new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
+        foreach ($iterator as $filename => $fileInfo) {
+            if ($fileInfo->isDir()) {
+                rmdir($filename);
+                echo "woee";
+            } else {
+                unlink($filename);
+            }
+        }
+        rmdir($dir);
+    }
+
     public function delete($id, $nama, $pj)
     {
 
@@ -143,6 +159,11 @@ class admin extends CI_Controller
         // delete table upload
         $this->db->where('namaSE', $nama);
         $this->db->delete('fileupload');
+
+        $dir = './upload/' . $nama . '/';
+        // $dir = './upload/Mantab/v1/';
+
+        $this->recursiveRmDir($dir);
 
         redirect('admin');
     }
