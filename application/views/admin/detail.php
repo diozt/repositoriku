@@ -434,7 +434,7 @@
 
                             <a class="mb-2 mr-2 btn-shadow btn btn-info" href="<?php echo base_url() . "admin/edit/" . $informasi->id . '/.' . $informasi->nama . '/.' . $informasi->penanggungjawab ?>">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
-                                    <i class="fa pe-7s-upload fa-w-10"></i>
+                                    <i class="fa pe-7s-edit fa-w-10"></i>
                                 </span>
                                 Edit
                             </a>
@@ -468,7 +468,7 @@
                             </div>
                         </div>
                         <!-- =============================================================================== -->
-                        <div class="col-md-12">
+                        <div class="col-md-12 mb-5">
                             <div id="accordion" class="accordion-wrapper">
                                 <div class="card">
                                     <div id="headingOne" class="card-header">
@@ -485,31 +485,35 @@
                                                             <tbody>
                                                                 <tr>
                                                                     <td width="30%">ID</td>
-                                                                    <td>: Otto</td>
+                                                                    <td>: <?= $du['id'] ?></td>
                                                                 </tr>
 
                                                                 <tr>
                                                                     <td width="30%">Nama Sistem Elektronik</td>
-                                                                    <td>:</td>
+                                                                    <td>: <?= $du['nama'] ?></td>
 
                                                                 </tr>
                                                                 <tr>
+                                                                    <td width="30%">Deskripsi</td>
+                                                                    <td>: <?= $du['deskripsi'] ?></td>
+                                                                </tr>
+                                                                <tr>
                                                                     <td width="30%">Sasaran Pelayanan</td>
-                                                                    <td>:</td>
+                                                                    <td>: <?= $du['sasaran'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Kategori Sistem Elektronik</td>
-                                                                    <td>:</td>
+                                                                    <td>: <?= $du['kategorisistem'] ?></td>
 
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Kategori Akses</td>
-                                                                    <td>:</td>
+                                                                    <td>: <?= $du['kategoriakses'] ?></td>
 
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Alamat URL</td>
-                                                                    <td>:</td>
+                                                                    <td>: <?= $du['url'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
@@ -518,11 +522,11 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Fungsi </td>
-                                                                    <td>: Fungsi </td>
+                                                                    <td>: <?= $fu['fungsi'] ?> </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Keterangan</td>
-                                                                    <td>: Keterangan</td>
+                                                                    <td>: <?= $fu['keterangan'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="35%">
@@ -531,7 +535,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Ruang Lingkup</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $du['ruanglingkup'] ?></td>
 
                                                                 </tr>
                                                                 <tr>
@@ -541,7 +545,11 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Jenis Layanan </td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $jl['jenis'] ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Keterangan </td>
+                                                                    <td>: <?= $jl['keterangan'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
@@ -550,7 +558,11 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="40%">Nama Sistem Pengaman</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $sp['namasp'] ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="40%">Keterangan</td>
+                                                                    <td>: <?= $sp['keterangan'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
@@ -559,7 +571,11 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td width="30%">Nama Sistem Terkait</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $st['namast'] ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="30%">Keterangan</td>
+                                                                    <td>: <?= $st['keterangan'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
@@ -568,35 +584,35 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Nama Sertifikat</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['namasertif'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Nama Institusi</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['namainst'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Tanggal Terbit</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['tglterbit'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Tanggal Mulai Berlaku</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['tglmulai'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Tanggal Habis Berlaku</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['tglhabis'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Masa Laku (Tahun)</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['masalaku'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Nomor Sertifikat</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['nosertif'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Ruang Lingkup</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $stf['ruanglingkup'] ?></td>
                                                                 </tr>
 
                                                                 <tr>
@@ -606,11 +622,11 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Jenis Pengguna</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $pl['jenisPengguna'] ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Keterangan</td>
-                                                                    <td>: </td>
+                                                                    <td>: <?= $pl['keterangan'] ?></td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -628,34 +644,276 @@
                                     </div>
                                     <div data-parent="#accordion" id="collapseOne2" class="collapse">
                                         <div class="card-body">
-                                            <h5 class="card-title">Satuan Kerja</h5>
-                                            <ul class="list-group mb-4">
-                                                <li class="list-group-item">Nama Satuan kerja</li>
-                                                <li class="list-group-item">Alamat Satuan Kerja</li>
-                                                <li class="list-group-item">Provinsi</li>
-                                                <li class="list-group-item">Kabupaten / Kota</li>
-                                                <li class="list-group-item">Kode POS</li>
-                                                <li class="list-group-item">No HP</li>
-                                                <li class="list-group-item">Alamat URL</li>
-                                            </ul>
-                                            <h5 class="card-title">Hardware Utama</h5>
-                                            <ul class="list-group mb-4">
-                                                <li class="list-group-item">Jenis Hardware</li>
-                                                <li class="list-group-item">Pemilik</li>
-                                                <li class="list-group-item">Penyedia Data Center</li>
-                                                <li class="list-group-item">Bandwith</li>
-                                                <li class="list-group-item">Jumlah Hardware</li>
-                                                <li class="list-group-item">Tipe</li>
-                                                <li class="list-group-item">Processor</li>
-                                                <li class="list-group-item">RAM</li>
-                                                <li class="list-group-item">Lokasi</li>
-                                            </ul>
-                                            <h5 class="card-title">Hardware Khusus</h5>
-                                            <ul class="list-group mb-4">
-                                                <li class="list-group-item">Jenis Hardware Khusus</li>
-                                                <li class="list-group-item">Tipe</li>
-                                                <li class="list-group-item">Keterangan</li>
-                                            </ul>
+                                            <table class="mb-3 table-borderless">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3">Satuan Kerja</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Nama Satuan kerja </td>
+                                                        <td>: <?= $plg['namask'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Alamat Satuan Kerja</td>
+                                                        <td>: <?= $plg['alamatsk'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Provinsi</td>
+                                                        <td>: <?= $plg['prov'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Kabupaten / Kota</td>
+                                                        <td>: <?= $plg['kabkot'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Kode POS</td>
+                                                        <td>: <?= $plg['kdpos'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">No HP</td>
+                                                        <td>: <?= $plg['telp'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Alamat URL</td>
+                                                        <td>: <?= $plg['website'] ?></td>
+                                                    </tr>
+                                                    <!-- ################################## -->
+                                                    <tr>
+                                                        <td width="35%">
+                                                            <h5 class="card-title mt-3 mb-1">Hardware Utama</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Jenis Hardware</td>
+                                                        <td>: <?= $pku['jenispk'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Pemilik</td>
+                                                        <td>: <?= $pku['pemilik'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Penyedia Data Center</td>
+                                                        <td>: <?= $pku['penyedia'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Bandwith</td>
+                                                        <td>: <?= $pku['bandwith'] ?> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Jumlah Hardware</td>
+                                                        <td>: <?= $pku['jumlah'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Tipe</td>
+                                                        <td>: <?= $pku['tipe'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Processor</td>
+                                                        <td>: <?= $pku['processor'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Kapasitas Hardisk</td>
+                                                        <td>: <?= $pku['kaphdd'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">RAM</td>
+                                                        <td>: <?= $pku['memori'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Lokasi</td>
+                                                        <td>: <?= $pku['lokasi'] ?></td>
+                                                    </tr>
+                                                    <!-- ################################## -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mb-1">Hardware Khusus</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Jenis Hardware Khusus</td>
+                                                        <td>: <?= $pkk['jenispk'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Tipe</td>
+                                                        <td>: <?= $pkk['tipe'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Keterangan</td>
+                                                        <td>: <?= $pkk['keterangan'] ?></td>
+                                                    </tr>
+                                                    <!-- ################################### -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mb-1">SOFTWARE UTAMA</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%">Nama Software Utama</td>
+                                                        <td>: <?= $plu['namapl'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="40%">Jenis Software</td>
+                                                        <td>: <?= $plu['jenispl'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="40%">Penyedia Software</td>
+                                                        <td>: <?= $plu['penyedia'] ?></td>
+                                                    </tr>
+                                                    <!-- #################################### -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mb-1">Software Pendukung</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Jenis Software Pendukung</td>
+                                                        <td>: <?= $plp['jenispl'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Deskripsi</td>
+                                                        <td>: <?= $plp['deskripsi'] ?></td>
+                                                    </tr>
+                                                    <!-- ################################### -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mb-1">Tenaga Ahli Yang Dibutuhkan</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jenis Tenaga Ahli</td>
+                                                        <td>: <?= $ta['jenis'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jumlah</td>
+                                                        <td>: <?= $ta['jumlah'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kompetensi</td>
+                                                        <td>: <?= $ta['kompetensi'] ?></td>
+                                                    </tr>
+                                                    <!-- ################################## -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mb-1"> Ketersediaan Tenaga Ahli</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jenis Tenaga Ahli</td>
+                                                        <td>: <?= $kta['jenis'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jumlah Tenaga Ahli</td>
+                                                        <td>: <?= $kta['jumlah'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Status Tenaga Ahli Yang Tersedia</td>
+                                                        <td>: <?= $kta['status'] ?></td>
+                                                    </tr>
+                                                    <!-- #################################### -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mb-1">Dasar Hukum</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nama Dasar Hukum</td>
+                                                        <td>: <?= $dh['namash'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nomor</td>
+                                                        <td>: <?= $dh['nomor'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tahun Terbit</td>
+                                                        <td>: <?= $dh['thterbit'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Tentang</td>
+                                                        <td>: <?= $dh['tentang'] ?></td>
+                                                    </tr>
+                                                    <!-- #################################### -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mb-1">SOP</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nama SOP</td>
+                                                        <td>: <?= $sop['namasop'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Keterangan</td>
+                                                        <td>: <?= $sop['keterangan'] ?></td>
+                                                    </tr>
+                                                    <!-- ##################################### -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mt-1">PenanggungJawab</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nama PenanggungJawab</td>
+                                                        <td>: <?= $pj['nama'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NIP</td>
+                                                        <td>: <?= $pj['nip'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Nama Satuan kerja </td>
+                                                        <td>: <?= $pj['namaSK'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Alamat Satuan Kerja</td>
+                                                        <td>: <?= $pj['alamatSK'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Provinsi</td>
+                                                        <td>: <?= $pj['prov'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Kabupaten / Kota</td>
+                                                        <td>: <?= $pj['kabkot'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Kode POS</td>
+                                                        <td>: <?= $pj['kdpos'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">No HP</td>
+                                                        <td>: <?= $pj['noHP'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="30%">Alamat Email</td>
+                                                        <td>: <?= $pj['email'] ?></td>
+                                                    </tr>
+                                                    <!-- ##################################### -->
+                                                    <tr>
+                                                        <td>
+                                                            <h5 class="card-title mt-3 mt-1">HelpDesk</h5>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nama</td>
+                                                        <td>: <?= $hd['nama'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nomor Telepon</td>
+                                                        <td>: <?= $hd['telp'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PIC/Admin</td>
+                                                        <td>: <?= $hd['picAdmin'] ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Email Helpdesk</td>
+                                                        <td>: <?= $hd['email'] ?></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!-- ###################### -->
                                         </div>
                                     </div>
                                 </div>
@@ -666,113 +924,34 @@
                                         </button>
                                     </div>
                                     <div data-parent="#accordion" id="collapseOne3" class="collapse">
-                                        <div class="card-body">3. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
-                                            nesciunt
-                                            laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
-                                            VHS.
+                                        <!-- ####################### -->
+                                        <div class="card-body">
+                                            <?php foreach ($files as $file) : ?>
+                                                <ul class="list-group mb-1">
+                                                    <li class="list-group-item">
+                                                        <span class="name"><?= $file['versi'] ?></span>
+                                                        <span><a href="#" class="mb-1 mr-15 btn-shadow btn btn-danger pull-right"><i class="fa pe-7s-trash fa-w-10"></i> Remove</a></span>
+                                                        </button>
+                                                    </li>
+                                                </ul>
+                                                <!-- <a class="mb-2 mr-2 btn-shadow btn btn-success mt-4" href="<?php echo base_url() . "admin/addversi/" . $informasi->id . '/.' . $informasi->nama . '/.' . $informasi->penanggungjawab ?>"> -->
+                                            <?php endforeach; ?>
                                         </div>
+                                        <a class="mb-2 ml-4 btn-shadow btn btn-success mt-1" href="#">
+                                            <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                <i class="fa pe-7s-upload fa-w-10"></i>
+                                            </span>
+                                            Add New Version
+                                        </a>
+                                        <!-- ######################## -->
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                         <!-- =============================================================================== -->
-                        <!-- <div style="display: block;"> -->
-                        <div class="card-body">
-                            <h5 class="card-title">App Information</h5>
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <p class="list-group-item-heading">ID Sistem :</p>
-                                    <h5 class="list-group-item-text"><?php echo $informasi->id ?></h5>
-                                </li>
-                                <li class="list-group-item">
-                                    <p class="list-group-item-heading">Nama Sistem Elektronik :</p>
-                                    <h5 class="list-group-item-text"><?php echo $informasi->nama ?></h5>
-                                </li>
-                                <li class="list-group-item">
-                                    <p class="list-group-item-heading">Deskripsi :</p>
-                                    <h5 class="list-group-item-text"><?php echo $informasi->deskripsi ?></h5>
-                                </li>
-                                <li class="list-group-item">
-                                    <p class="list-group-item-heading">Tanggal Entri :</p>
-                                    <h5 class="list-group-item-text"><?php echo $informasi->tglentri ?></h5>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- <p>Tanggal Rilis/Update : <?php echo $informasi->tgl_rilis ?> </p>
-                                                <p>Jenis Aplikasi : <?php echo $informasi->jenisAplikasi ?> </p>
-                                                <p>OPD : <?php echo $informasi->opd ?> </p>
-                                                <p>Status : <?php echo $informasi->stt ?> </p>
-                                                <p>Jenis : <?php echo $informasi->jenis ?> </p>
-                                                <p>Level : <?php echo $informasi->lv ?> </p>
-                                                <p>Pengembang : <?php echo $informasi->pengembang ?> </p>
-                                                <p>Bahasa Pemrograman : <?php echo $informasi->bahasa ?> </p>
-                                                <p>Framework : <?php echo $informasi->framework ?> </p>
-                                                <p>Server : <?php echo $informasi->srv ?> </p>
-                                                <p>Keterangan : <?php echo $informasi->keterangan ?> </p> -->
 
-                        <div class="card-header-tab card-header">
-                            <div class="card-header-title">
-                                <i class="header-icon lnr-bicycle icon-gradient bg-love-kiss"></i>
-                                Equipments
-                            </div>
-                            <ul class="nav">
-                                <li class="nav-item"><a data-toggle="tab" href="#tab-eg5-0" class="active nav-link">Dokumen Perancangan</a></li>
-                                <li class="nav-item"><a data-toggle="tab" href="#tab-eg5-1" class="nav-link">Source Code</a></li>
-                                <li class="nav-item"><a data-toggle="tab" href="#tab-eg5-2" class="nav-link">Database</a></li>
-                                <li class="nav-item"><a data-toggle="tab" href="#tab-eg5-3" class="nav-link">Lainnya</a></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="tab-eg5-0" role="tabpanel">
-                                    <p>
-                                        <?php foreach ($files as $listfile) : ?>
-                                            <p><?php echo $listfile->docperancangan ?></p>
-                                        <?php endforeach; ?>
-                                    </p>
-                                </div>
-                                <div class="tab-pane" id="tab-eg5-1" role="tabpanel">
-                                    <p>
-                                        <?php foreach ($files as $listfile) : ?>
-                                            <p><?php echo $listfile->sCode ?></p>
-                                        <?php endforeach; ?>
-                                    </p>
-                                </div>
-                                <div class="tab-pane" id="tab-eg5-2" role="tabpanel">
-                                    <p>
-                                        <?php foreach ($files as $listfile) : ?>
-                                            <p><?php echo $listfile->dbMaster ?></p>
-                                        <?php endforeach; ?>
-                                    </p>
-                                </div>
-                                <div class="tab-pane" id="tab-eg5-3" role="tabpanel">
-                                    <p>
-                                        <?php foreach ($files as $listfile) : ?>
-                                            <p><?php echo $listfile->lainnya ?></p>
-                                        <?php endforeach; ?>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- </div> -->
-
-                            <script>
-                                function details(evt, data) {
-                                    var i, tabcontent, tablinks;
-                                    tabcontent = document.getElementsByClassName("tabcontent");
-                                    for (i = 0; i < tabcontent.length; i++) {
-                                        tabcontent[i].style.display = "none";
-                                    }
-                                    tablinks = document.getElementsByClassName("tablinks");
-                                    for (i = 0; i < tablinks.length; i++) {
-                                        tablinks[i].className = tablinks[i].className.replace(" active", "");
-                                    }
-                                    document.getElementById(data).style.display = "block";
-                                    evt.currentTarget.className += " active";
-                                }
-                            </script>
-                        <?php endforeach; ?>
-                        </div>
+                    <?php endforeach; ?>
 
                     </div>
                 </div>

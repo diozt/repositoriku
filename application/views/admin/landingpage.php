@@ -528,12 +528,9 @@
                                                     <!-- Actions -->
                                                     <td class="text-center">
                                                         <?php $parameter = array($file->id, $file->nama) ?>
-                                                        <a href="<?php echo base_url() . "admin/detail/" . $file->nama ?>" class="mb-1 mr-1 btn btn-primary btn-sm">Details</a>
-                                                        <a class="mb-1 mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>">Edit</a>
-                                                        <button class="mb-1 mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove">Remove</button>
-
-
-
+                                                        <a href="<?php echo base_url() . "admin/detail/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>" class="mb-1 mr-1 btn btn-primary btn-sm"><i class="fa pe-7s-note2 fa-w-10"></i> Details</a>
+                                                        <a class="mb-1 mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>"><i class="fa pe-7s-edit fa-w-10"></i> Edit</a>
+                                                        <button class="mb-1 mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove"><i class="fa pe-7s-trash fa-w-10"></i> Remove</button>
                                                     </td>
                                                 </tr>
 
