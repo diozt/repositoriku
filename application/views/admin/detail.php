@@ -930,8 +930,13 @@
                                                 <ul class="list-group mb-1">
                                                     <li class="list-group-item">
                                                         <span class="name"><?= $file['versi'] ?></span>
-                                                        <span><a href="#" class="mb-1 mr-15 btn-shadow btn btn-danger pull-right"><i class="fa pe-7s-trash fa-w-10"></i> Remove</a></span>
-                                                        </button>
+                                                        <span><button class="mb-2 mr-2 btn-shadow btn btn-danger pull-right" data-toggle="modal" data-target="#popupRemoveversi">
+                                                                <span class="btn-icon-wrapper pr-2 opacity-7">
+                                                                    <i class="fa pe-7s-trash fa-w-10"></i>
+                                                                </span>
+                                                                Remove
+                                                            </button></span>
+                                                        <span><a class="mb-2 mr-2 btn-shadow btn btn-alternate pull-right" href="<?php echo base_url() . "admin/downloadversi/" . $informasi->nama . '/' . $file['versi'] ?>"><i class="fa pe-7s-download fa-w-10"></i> Download</a></span>
                                                     </li>
                                                 </ul>
                                                 <!-- <a class="mb-2 mr-2 btn-shadow btn btn-success mt-4" href="<?php echo base_url() . "admin/addversi/" . $informasi->id . '/.' . $informasi->nama . '/.' . $informasi->penanggungjawab ?>"> -->
@@ -992,7 +997,7 @@
 </div>
 </div>
 
-<!--  Modal -->
+<!--  Modal hapus all-->
 <?php foreach ($info as $file) : ?>
     <div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -1009,6 +1014,29 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <a href="<?php echo base_url() . "admin/delete/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab  ?>" class="btn btn-danger">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<!--  Modal hapus versi-->
+<?php foreach ($files as $file) : ?>
+    <div class="modal" tabindex="1000" id="popupRemoveversi" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure to delete this?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <a href="<?php echo base_url() . "admin/recursiveRmDirversi/" . $file['namaSE'] . '/' . $file['versi']  ?>" class="btn btn-danger">Yes</a>
                 </div>
             </div>
         </div>

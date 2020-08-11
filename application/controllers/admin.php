@@ -114,6 +114,25 @@ class admin extends CI_Controller
         $this->zip->download($filename);
     }
 
+    public function downloadversi($folder, $versi)
+    {
+        // %20 to space
+        $folder = urldecode($folder);
+        // File name
+        $filename = $folder . ".zip";
+        // Directory path (uploads directory stored in project root)
+        $path = './upload/' . $folder . '/' . $versi . '/';
+
+        // Add directory to zip
+        $this->zip->read_dir($path);
+
+        // Save the zip file to archivefiles directory
+        $this->zip->archive($filename);
+
+        // Download
+        $this->zip->download($filename);
+    }
+
     public function recursiveRmDir($dir)
     {
 
@@ -185,5 +204,22 @@ class admin extends CI_Controller
         $this->recursiveRmDir($dir);
 
         redirect('admin');
+    }
+
+    public function recursiveRmDirversi($folder, $versi)
+    {
+        $folder = urldecode($folder);
+        $versi = urldecode($versi);
+        $dir = './upload/' . $folder . '/' . $versi . '/';
+        $iterator = new RecursiveIteratorIterator(new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS), \RecursiveIteratorIterator::CHILD_FIRST);
+        foreach ($iterator as $filename => $fileInfo) {
+            if ($fileInfo->isDir()) {
+                rmdir($filename);
+                echo "woee";
+            } else {
+                unlink($filename);
+            }
+        }
+        rmdir($dir);
     }
 };
