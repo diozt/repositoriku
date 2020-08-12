@@ -467,6 +467,7 @@
                                                 </div>########## -->
                             </div>
                         </div>
+                        
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -474,14 +475,30 @@
                                         <div class="widget-content-outer">
                                             <div class="widget-content-wrapper">
                                                 <div class="widget-content-left">
-                                                    <div class="widget-subheading">Last year expenses</div>
+                                                    <!-- <div class="widget-subheading">Last year expenses</div>
                                                     <div class="widget-heading">Total Orders</div>
-                                                    <br>
+                                                    <br> -->
+
                                                     <div class="widget-subheading">ID</div>
-                                                    <div class="widget-heading"><?= $du['id'] ?></div>
+                                                    <!-- <div class="widget-heading"><?= $du['id'] ?></div> -->
+                                                    
+                                                    <div class="widget-subheading">Nama Aplikasi</div>
+                                                    <!-- <div class="widget-heading"><?= $du['nama'] ?></div> -->
+                                                    
+                                                    <div class="widget-subheading">Deskripsi</div>
+                                                    <!-- <div class="widget-heading"><?= $du['deskripsi'] ?></div> -->
                                                 </div>
                                                 <div class="widget-content-right">
-                                                    <div class="widget-numbers text-success">1896</div>
+                                                    
+                                                    <!-- <div class="widget-subheading">ID</div> -->
+                                                    <div class="widget-heading"><?= $du['id'] ?></div>
+                                                    
+                                                    <!-- <div class="widget-subheading">Nama Aplikasi</div> -->
+                                                    <div class="widget-heading"><?= $du['nama'] ?></div>
+                                                    
+                                                    <!-- <div class="widget-subheading">Deskripsi</div> -->
+                                                    <div class="widget-heading"><?= $du['deskripsi'] ?></div>
+                                                    <!-- <div class="widget-numbers text-success">1896</div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -504,6 +521,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- =============================================================================== -->
                         <div class="col-md-12 mb-5">
                             <div id="accordion" class="accordion-wrapper">
