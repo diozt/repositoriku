@@ -49,16 +49,49 @@
                     </button>
                 </span>
             </div>
-            <div class="app-header__content">
+            <div class="app-header__content" style="border-radius: 0px;">
                 <div class="app-header-left">
-                    <div class="search-wrapper">
-                        <div class="input-holder">
-                            <input type="text" class="search-input" placeholder="Type to search">
-                            <button class="search-icon"><span></span></button>
+                    <div class="input-group">
+                        <div class="input-group-btn input-group-lg input-group-md">
+                            <button type="button" class="btn btn-danger dropdown-toggle btn-responsive" data-toggle="dropdown" aria-expanded="false" style="border-radius: 0px;height:100%">Select Search Type <span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-left ml-0 pl-2" role="menu" style="width: 130%;border-radius: 0px;">
+                                <table style="width:80%">
+                                    <tr>
+                                        <th>Advanced Search</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenis Aplikasi</td>
+                                        <td colspan="2"><select class="form-control" name="jenispl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                <option hidden>Pilih</option>
+                                                <option>Apk Desktop</option>
+                                                <option>Apk Client/Server</option>
+                                                <option>Apk Web</option>
+                                        </td>
+                                    </tr>
+                                    <tr style="margin-bottom: 10px;">
+                                        <td>Tanggal Entri</td>
+                                        <td style="margin-bottom: 10px;border-radius: 0px"><input type="text" class="form-control" placeholder="From" onfocus="(this.type='date')" name="from"></td>
+                                        <td><input type="text" class="form-control" placeholder="To" onfocus="(this.type='date')" name="to"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jenis Layanan Aplikasi</td>
+                                        <td colspan="2"><select class="form-control mt-2" name="lvl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                <option hidden>Pilih</option>
+                                                <option>Pelaporan Masyarakat</option>
+                                                <option>Pembayaran</option>
+                                                <option>Pendaftaran</option>
+                                                <option>Perizinan</option>
+                                                <option>Publikasi Informasi</option>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="btn btn-focus mt-2" style="border-radius: 0px;height:100%">Search</button>
+                            </ul>
                         </div>
-
-                        <button class="close"></button>
+                        <input type="text" id="faq_SearchBox" placeholder="Search..." class="search form-control" style="border-radius: 0px;width: 400px;" />
                     </div>
+
+
                     <!-- <ul class="header-menu nav">
                         <li class="dropdown nav-item">
                             <a href="javascript:void(0);" class="nav-link">
