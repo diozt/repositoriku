@@ -519,21 +519,13 @@
                                                 <div class="widget-content-right">
                                                     <div class="widget-heading widget-numbers fsize-1 text-white text-right"><?= $du['kategoriakses'] ?></div>
                                                     <br>
-                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><a class="text-white" href="<?= $du['url'] ?>"><?= $du['url'] ?></a></div>                                                    
+                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><a class="text-white" href="<?= $du['url'] ?>" target="_blank"><?= $du['url'] ?></a></div>                                                    
+                                                    <!-- ###Error rung kenek href e -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <!-- <div class="col-md-12">
-                                    <div class="card mb-0 widget-content bg-premium-dark">
-                                        <div class="card-body text-white">
-                                            <h5 class="card-title fsize-1 text-white">Deskripsi</h5>
-                                            <p><?= $du['deskripsi'] ?></p>
-                                        </div>
-                                    </div>
-                                </div> -->
 
                                 <div class="col-md-12">
                                     <div class="card mb-0 widget-content bg-deep-blue">
@@ -558,126 +550,23 @@
                                     </div>
                                     <div data-parent="#accordion" id="collapseOne1" aria-labelledby="headingOne" class="collapse show">
                                         <div class="card-body">
-                                            <div class="col-md-12">
-                                                <div class="main-card card">
-                                                    <div class="card-body">
-                                                        <table class="mb-3 table-borderless">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <h5 class="card-title mt-3 mb-0">Fungsi Yang Dimiliki</h5>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Fungsi </td>
-                                                                    <td>: <?= $fu['fungsi'] ?> </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Keterangan</td>
-                                                                    <td>: <?= $fu['keterangan'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="35%">
-                                                                        <h5 class="card-title mt-3 mb-1">Ruang Lingkup Sistem Elektronik</h5>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Ruang Lingkup</td>
-                                                                    <td>: <?= $du['ruanglingkup'] ?></td>
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <h5 class="card-title mt-3 mb-1">Jenis Layanan Sistem Elektronik</h5>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Jenis Layanan </td>
-                                                                    <td>: <?= $jl['jenis'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Keterangan </td>
-                                                                    <td>: <?= $jl['keterangan'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <h5 class="card-title mt-3 mb-1">Sistem Pengaman</h5>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="40%">Nama Sistem Pengaman</td>
-                                                                    <td>: <?= $sp['namasp'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="40%">Keterangan</td>
-                                                                    <td>: <?= $sp['keterangan'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <h5 class="card-title mt-3 mb-1">Sistem Terkait</h5>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Nama Sistem Terkait</td>
-                                                                    <td>: <?= $st['namast'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Keterangan</td>
-                                                                    <td>: <?= $st['keterangan'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <h5 class="card-title mt-3 mb-1">Sertifikasi</h5>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Nama Sertifikat</td>
-                                                                    <td>: <?= $stf['namasertif'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Nama Institusi</td>
-                                                                    <td>: <?= $stf['namainst'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Tanggal Terbit</td>
-                                                                    <td>: <?= $stf['tglterbit'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Tanggal Mulai Berlaku</td>
-                                                                    <td>: <?= $stf['tglmulai'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Tanggal Habis Berlaku</td>
-                                                                    <td>: <?= $stf['tglhabis'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Masa Laku (Tahun)</td>
-                                                                    <td>: <?= $stf['masalaku'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Nomor Sertifikat</td>
-                                                                    <td>: <?= $stf['nosertif'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Ruang Lingkup</td>
-                                                                    <td>: <?= $stf['ruanglingkup'] ?></td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td>
-                                                                        <h5 class="card-title mt-3 mt-1">Penguna Layanan Sistem Elektronik</h5>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Jenis Pengguna</td>
-                                                                    <td>: <?= $pl['jenisPengguna'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Keterangan</td>
-                                                                    <td>: <?= $pl['keterangan'] ?></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="card mb-3 widget-content bg- midnight-bloom">
+                                                        <div class="widget-content-outer">
+                                                            <div class="widget-content-wrapper">
+                                                                <div class="widget-content-left text-white">
+                                                                    <div class="">Fungsi</div>
+                                                                    <br>
+                                                                    <div class="">Keterangan</div>                                                    
+                                                                </div>
+                                                                <div class="widget-content-right">
+                                                                    <div class="widget-heading widget-numbers fsize-1 text-right"><?= $fu['fungsi'] ?></div>
+                                                                    <br>
+                                                                    <div class="widget-heading widget-numbers fsize-1 text-right"><?= $fu['keterangan'] ?></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
