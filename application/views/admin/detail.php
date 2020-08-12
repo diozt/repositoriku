@@ -467,6 +467,43 @@
                                                 </div>########## -->
                             </div>
                         </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card mb-3 widget-content">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-subheading">Last year expenses</div>
+                                                    <div class="widget-heading">Total Orders</div>
+                                                    <br>
+                                                    <div class="widget-subheading">ID</div>
+                                                    <div class="widget-heading"><?= $du['id'] ?></div>
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div class="widget-numbers text-success">1896</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card mb-3 widget-content">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left">
+                                                    <div class="widget-subheading">Last year expenses</div>
+                                                    <div class="widget-heading">Total Orders</div>
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div class="widget-numbers text-success">1896</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- =============================================================================== -->
                         <div class="col-md-12 mb-5">
                             <div id="accordion" class="accordion-wrapper">
@@ -483,38 +520,6 @@
                                                     <div class="card-body">
                                                         <table class="mb-3 table-borderless">
                                                             <tbody>
-                                                                <tr>
-                                                                    <td width="30%">ID</td>
-                                                                    <td>: <?= $du['id'] ?></td>
-                                                                </tr>
-
-                                                                <tr>
-                                                                    <td width="30%">Nama Sistem Elektronik</td>
-                                                                    <td>: <?= $du['nama'] ?></td>
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Deskripsi</td>
-                                                                    <td>: <?= $du['deskripsi'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Sasaran Pelayanan</td>
-                                                                    <td>: <?= $du['sasaran'] ?></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Kategori Sistem Elektronik</td>
-                                                                    <td>: <?= $du['kategorisistem'] ?></td>
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Kategori Akses</td>
-                                                                    <td>: <?= $du['kategoriakses'] ?></td>
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <td width="30%">Alamat URL</td>
-                                                                    <td>: <?= $du['url'] ?></td>
-                                                                </tr>
                                                                 <tr>
                                                                     <td>
                                                                         <h5 class="card-title mt-3 mb-0">Fungsi Yang Dimiliki</h5>
