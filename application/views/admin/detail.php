@@ -470,55 +470,80 @@
                         
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <div class="card mb-3 widget-content">
+                                <div class="col-md-4">
+                                    <div class="card mb-3 widget-content bg-midnight-bloom">
                                         <div class="widget-content-outer">
                                             <div class="widget-content-wrapper">
-                                                <div class="widget-content-left">
-                                                    <!-- <div class="widget-subheading">Last year expenses</div>
-                                                    <div class="widget-heading">Total Orders</div>
-                                                    <br> -->
+                                                <div class="widget-content-left text-white">
+                                                    <div class="">ID</div>
+                                                    <br>
+                                                    <div class="">Nama</div>                                                    
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><?= $du['id'] ?></div>
+                                                    <br>
+                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><?= $du['nama'] ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="card mb-3 widget-content bg-ripe-malin">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left text-white">
+                                                    <div class="">Sasaran Pelayanan</div>
+                                                    <br>
+                                                    <div class="">Kategori Sistem</div>
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><?= $du['sasaran'] ?></div>
+                                                    <br>
+                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><?= $du['kategorisistem'] ?></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card mb-3 widget-content bg-grow-early">
+                                        <div class="widget-content-outer">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left text-white">
+                                                    <div class="">Kategori Akses</div>
+                                                    <br>
+                                                    <div class="">Alamat URL</div>
+                                                </div>
+                                                <div class="widget-content-right">
+                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><?= $du['kategoriakses'] ?></div>
+                                                    <br>
+                                                    <div class="widget-heading widget-numbers fsize-1 text-white text-right"><a class="text-white" href="<?= $du['url'] ?>"><?= $du['url'] ?></a></div>                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- <div class="col-md-12">
+                                    <div class="card mb-0 widget-content bg-premium-dark">
+                                        <div class="card-body text-white">
+                                            <h5 class="card-title fsize-1 text-white">Deskripsi</h5>
+                                            <p><?= $du['deskripsi'] ?></p>
+                                        </div>
+                                    </div>
+                                </div> -->
 
-                                                    <div class="widget-subheading">ID</div>
-                                                    <!-- <div class="widget-heading"><?= $du['id'] ?></div> -->
-                                                    
-                                                    <div class="widget-subheading">Nama Aplikasi</div>
-                                                    <!-- <div class="widget-heading"><?= $du['nama'] ?></div> -->
-                                                    
-                                                    <div class="widget-subheading">Deskripsi</div>
-                                                    <!-- <div class="widget-heading"><?= $du['deskripsi'] ?></div> -->
-                                                </div>
-                                                <div class="widget-content-right">
-                                                    
-                                                    <!-- <div class="widget-subheading">ID</div> -->
-                                                    <div class="widget-heading"><?= $du['id'] ?></div>
-                                                    
-                                                    <!-- <div class="widget-subheading">Nama Aplikasi</div> -->
-                                                    <div class="widget-heading"><?= $du['nama'] ?></div>
-                                                    
-                                                    <!-- <div class="widget-subheading">Deskripsi</div> -->
-                                                    <div class="widget-heading"><?= $du['deskripsi'] ?></div>
-                                                    <!-- <div class="widget-numbers text-success">1896</div> -->
-                                                </div>
-                                            </div>
+                                <div class="col-md-12">
+                                    <div class="card mb-0 widget-content bg-deep-blue">
+                                        <div class="card-body ">
+                                            <div class="card-title fsize-1 ">Deskripsi</div>
+                                            <p><?= $du['deskripsi'] ?></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="card mb-3 widget-content">
-                                        <div class="widget-content-outer">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-subheading">Last year expenses</div>
-                                                    <div class="widget-heading">Total Orders</div>
-                                                </div>
-                                                <div class="widget-content-right">
-                                                    <div class="widget-numbers text-success">1896</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
 
