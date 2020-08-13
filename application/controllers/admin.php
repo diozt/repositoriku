@@ -216,7 +216,6 @@ class admin extends CI_Controller
         foreach ($iterator as $filename => $fileInfo) {
             if ($fileInfo->isDir()) {
                 rmdir($filename);
-                echo "woee";
             } else {
                 unlink($filename);
             }
@@ -224,14 +223,18 @@ class admin extends CI_Controller
         rmdir($dir);
     }
 
-    public function search($nama)
+    public function search()
     {
+        $nama = $_POST['cari'];
+
+
         $this->db->like('nama', $nama);
         $this->db->or_like('url', $nama);
         $this->db->or_like('sasaran', $nama);
         $this->db->or_like('kategorisistem', $nama);
         $this->db->or_like('kategoriakses', $nama);
         $this->db->or_like('ruanglingkup', $nama);
+        $this->db->order_by('tglentri', 'desc');
         $query = $this->db->get('dataumum');
 
         $data['files'] = $query->result();

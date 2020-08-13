@@ -11,7 +11,9 @@
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>baru/main.css">
-
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <!-- Latest compiled and minified CSS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
@@ -50,60 +52,65 @@
                 </span>
             </div>
             <div class="app-header__content" style="border-radius: 0px;">
-                <div class="app-header-left">
-                    <div class="input-group">
-                        <div class="input-group-btn input-group-lg input-group-md">
-                            <button type="button" class="btn btn-light dropdown-toggle btn-responsive" data-toggle="dropdown" aria-expanded="false" style="border-radius: 0px;height:100%">Select Search Type <span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-left ml-0 pl-4" role="menu" style="width: 130%;border-radius: 0px;">
-                                <table style="width:80%">
-                                    <tr>
-                                        <th>Advanced Search</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Jenis Aplikasi</td>
-                                        <td colspan="2"><select class="form-control" name="jenispl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
-                                                <option hidden>Pilih</option>
-                                                <option>Apk Desktop</option>
-                                                <option>Apk Client/Server</option>
-                                                <option>Apk Web</option>
-                                        </td>
-                                    </tr>
-                                    <tr style="margin-bottom: 10px;">
-                                        <td>Tanggal Entri</td>
-                                        <td style="margin-bottom: 10px;border-radius: 0px"><input type="text" class="form-control" placeholder="From" onfocus="(this.type='date')" name="from"></td>
-                                        <td><input type="text" class="form-control" placeholder="To" onfocus="(this.type='date')" name="to"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jenis Layanan Aplikasi</td>
-                                        <td colspan="2"><select class="form-control mt-2" name="lvl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
-                                                <option hidden>Pilih</option>
-                                                <option>Pelaporan Masyarakat</option>
-                                                <option>Pembayaran</option>
-                                                <option>Pendaftaran</option>
-                                                <option>Perizinan</option>
-                                                <option>Publikasi Informasi</option>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <button type="button" class="btn btn-focus mt-2" style="border-radius: 0px;height:100%">Search</button>
-                            </ul>
-                        </div>
-                        <input type="text" placeholder="Search..." class="search form-control" style="border-radius: 0px;width: 400px;" id="search" />
-                    </div>
+                <form action="<?= base_url() . "admin/search" ?>" method="post">
+                    <div class=" app-header-left" style="width: 140%;">
+                        <div class=" input-group">
+                            <div class="input-group-btn search-panel">
+                                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" style="border-radius: 0px;height:100%">
+                                    <span id="search_concept">Advanced Search</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left ml-0 pl-4" role="menu" style="width: 130%;border-radius: 0px;">
+                                    <table style="width:80%">
+
+                                        <tr>
+                                            <td>Jenis Aplikasi</td>
+                                            <td colspan="2"><select class="form-control" name="jenispl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                    <option hidden>Pilih</option>
+                                                    <option>Apk Desktop</option>
+                                                    <option>Apk Client/Server</option>
+                                                    <option>Apk Web</option>
+                                            </td>
+                                        </tr>
+                                        <tr style="margin-bottom: 10px;">
+                                            <td>Tanggal Entri</td>
+                                            <td style="margin-bottom: 10px;border-radius: 0px"><input type="text" class="form-control" placeholder="From" onfocus="(this.type='date')" name="from"></td>
+                                            <td><input type="text" class="form-control" placeholder="To" onfocus="(this.type='date')" name="to"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jenis Layanan Aplikasi</td>
+                                            <td colspan="2"><select class="form-control mt-2" name="lvl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                    <option hidden>Pilih</option>
+                                                    <option>Pelaporan Masyarakat</option>
+                                                    <option>Pembayaran</option>
+                                                    <option>Pendaftaran</option>
+                                                    <option>Perizinan</option>
+                                                    <option>Publikasi Informasi</option>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <button type="button" class="btn btn-focus mt-2" style="border-radius: 0px;height:100%">Search</button>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control" name="cari" id="search" placeholder="Search">
+                            <span class=" input-group-btn">
+                                <button class="btn btn-transition btn btn-outline-info" type="submit" style="border-radius: 2px;"><img src="https://img.icons8.com/cotton/24/000000/search--v1.png" /></span></button>
+                            </span>
+                </form>
+            </div>
 
 
-                    <script>
-                        var sc = document.getElementById("search");
-                        sc.addEventListener("keyup", function(event) {
-                            if (event.keyCode === 13) {
+            <script>
+                var sc = document.getElementById("search");
+                sc.addEventListener("keyup", function(event) {
+                    if (event.keyCode === 13) {
 
-                                window.location = '<?php echo base_url()  . "admin/search/" ?>' + sc.value;
+                        window.location = '<?php echo base_url()  . "admin/search/" ?>';
 
 
-                            }
-                        });
-                    </script>
-                    <!-- <ul class="header-menu nav">
+                    }
+                });
+            </script>
+            <!-- <ul class="header-menu nav">
                         <li class="dropdown nav-item">
                             <a href="javascript:void(0);" class="nav-link">
                                 <i class="nav-link-icon fa fa-cog"></i>
@@ -111,43 +118,43 @@
                             </a>
                         </li>
                     </ul> -->
-                </div>
-                <div class="app-header-right">
-                    <div class="header-btn-lg pr-0">
-                        <div class="widget-content p-0">
-                            <div class="widget-content-wrapper">
-                                <div class="widget-content-left">
-                                    <div class="btn-group">
-                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
-                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
-                                        </a>
-                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <!-- <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+        </div>
+        <div class="app-header-right" style="width: 10%;">
+            <div class="header-btn-lg pr-0">
+                <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left">
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                    <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                </a>
+                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                    <!-- <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
                                             <h6 tabindex="-1" class="dropdown-header">Header</h6>
                                             <button type="button" tabindex="0" class="dropdown-item">Actions</button> -->
-                                            <div tabindex="-1" class="dropdown-divider"></div>
-                                            <a href="<?php echo base_url() . "auth/logout" ?>" class="dropdown-item">Log out</a>
-                                        </div>
-                                    </div>
+                                    <div tabindex="-1" class="dropdown-divider"></div>
+                                    <a href="<?php echo base_url() . "auth/logout" ?>" class="dropdown-item">Log out</a>
                                 </div>
-                                <div class="widget-content-left  ml-3 header-user-info">
-                                    <div class="widget-heading">
-                                        Admin
-                                    </div>
-                                    <div class="widget-subheading">
-                                        <?= $admin['username']; ?>
-                                    </div>
-                                </div>
-                                <!-- <div class="widget-content-right header-user-info ml-3">
+                            </div>
+                        </div>
+                        <div class="widget-content-left  ml-3 header-user-info">
+                            <div class="widget-heading">
+                                Admin
+                            </div>
+                            <div class="widget-subheading">
+                                <?= $admin['username']; ?>
+                            </div>
+                        </div>
+                        <!-- <div class="widget-content-right header-user-info ml-3">
                                         <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
                                         </button>
                                     </div>############### -->
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
