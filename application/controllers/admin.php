@@ -18,6 +18,7 @@ class admin extends CI_Controller
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view("admin/landingpage", $data); // kirim data ke view
         // $this->load->view("template/footer", $data); // kirim data ke view
+
     }
     public function form()
     {
@@ -215,11 +216,33 @@ class admin extends CI_Controller
         foreach ($iterator as $filename => $fileInfo) {
             if ($fileInfo->isDir()) {
                 rmdir($filename);
-                echo "woee";
             } else {
                 unlink($filename);
             }
         }
         rmdir($dir);
+    }
+
+    public function search()
+    {
+        $nama = $_POST['cari'];
+
+
+        $this->db->like('nama', $nama);
+        $this->db->or_like('url', $nama);
+        $this->db->or_like('sasaran', $nama);
+        $this->db->or_like('kategorisistem', $nama);
+        $this->db->or_like('kategoriakses', $nama);
+        $this->db->or_like('ruanglingkup', $nama);
+        $this->db->order_by('tglentri', 'desc');
+        $query = $this->db->get('dataumum');
+
+        $data['files'] = $query->result();
+
+        // $data["files"] = $this->M_list->getAll(); // ambil data dari model
+        $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $this->load->view("template/header", $data); // kirim data ke view
+        $this->load->view("admin/landingpage", $data); // kirim data ke view
+
     }
 };
