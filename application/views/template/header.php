@@ -53,8 +53,8 @@
                 <div class="app-header-left">
                     <div class="input-group">
                         <div class="input-group-btn input-group-lg input-group-md">
-                            <button type="button" class="btn btn-danger dropdown-toggle btn-responsive" data-toggle="dropdown" aria-expanded="false" style="border-radius: 0px;height:100%">Select Search Type <span class="caret"></span></button>
-                            <ul class="dropdown-menu dropdown-menu-left ml-0 pl-2" role="menu" style="width: 130%;border-radius: 0px;">
+                            <button type="button" class="btn btn-light dropdown-toggle btn-responsive" data-toggle="dropdown" aria-expanded="false" style="border-radius: 0px;height:100%">Select Search Type <span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-left ml-0 pl-4" role="menu" style="width: 130%;border-radius: 0px;">
                                 <table style="width:80%">
                                     <tr>
                                         <th>Advanced Search</th>
@@ -88,10 +88,21 @@
                                 <button type="button" class="btn btn-focus mt-2" style="border-radius: 0px;height:100%">Search</button>
                             </ul>
                         </div>
-                        <input type="text" id="faq_SearchBox" placeholder="Search..." class="search form-control" style="border-radius: 0px;width: 400px;" />
+                        <input type="text" placeholder="Search..." class="search form-control" style="border-radius: 0px;width: 400px;" id="search" />
                     </div>
 
 
+                    <script>
+                        var sc = document.getElementById("search");
+                        sc.addEventListener("keyup", function(event) {
+                            if (event.keyCode === 13) {
+
+                                window.location = '<?php echo base_url()  . "admin/search/" ?>' + sc.value;
+
+
+                            }
+                        });
+                    </script>
                     <!-- <ul class="header-menu nav">
                         <li class="dropdown nav-item">
                             <a href="javascript:void(0);" class="nav-link">

@@ -314,7 +314,7 @@
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Dashboards</li>
                             <li>
-                                <a href="<?php base_url() . "c_list" ?>" class="mm-active">
+                                <a href="<?= base_url() . "admin" ?>" class="mm-active">
                                     <i class="metismenu-icon pe-7s-rocket"></i>
                                     Dashboard
                                 </a>
@@ -322,7 +322,7 @@
                             <li class="app-sidebar__heading">Other Menu</li>
                             <!-- <li class="app-sidebar__heading">UI Components</li>#### -->
                             <li>
-                                <a href="#">
+                                <a href="">
                                     <i class="metismenu-icon pe-7s-diamond"></i>
                                     Menu 2
                                     <!-- Elements -->
