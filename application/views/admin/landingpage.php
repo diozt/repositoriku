@@ -413,10 +413,11 @@
                                 </div>
                             </div>
                             <div class="page-title-actions">
-                                <a href="<?php echo base_url() . 'admin/form' ?>" class="btn-shadow mr-3 btn btn-dark">Form Upload
-                                    <span class="btn-icon-wrapper pr-2 opacity-7">
-                                        <i class="pe pe-7s-plus pe-w-20"></i>
-                                    </span></a>
+                                <a href="<?php echo base_url() . 'admin/form' ?>" class="btn-shadow btn btn-dark">
+                                    <!-- <i class="pe pe-7s-plus pe-w-20"></i> -->
+                                    <i class="fa fa-plus-circle mr-2"></i>
+                                    Tambah
+                                </a>
                                 <!-- <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                                             <i class="fa fa-star"></i>
                                         </button> -->
@@ -485,13 +486,11 @@
                                     <table class="align-middle mb-0 table table-borderless table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <center>
-                                                    <th class="text-center">No</th>
-                                                    <th class="text-center">File Name</th>
-                                                    <th class="text-center">Entry Time</th>
-                                                    <!-- <th class="text-center">Status</th> -->
-                                                    <th class="text-center">Actions</th>
-                                                </center>
+                                                <th class="text-center">No</th>
+                                                <th class="text-center">File Name</th>
+                                                <th class="text-center">Entry Time</th>
+                                                <!-- <th class="text-center">Status</th> -->
+                                                <th class="text-center">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -528,9 +527,9 @@
                                                     <!-- Actions -->
                                                     <td class="text-center">
                                                         <?php $parameter = array($file->id, $file->nama) ?>
-                                                        <a href="<?php echo base_url() . "admin/detail/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>" class="mb-1 mr-1 btn btn-primary btn-sm"><i class="fa pe-7s-note2 fa-w-10"></i> Details</a>
-                                                        <a class="mb-1 mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>"><i class="fa pe-7s-edit fa-w-10"></i> Edit</a>
-                                                        <button class="mb-1 mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove"><i class="fa pe-7s-trash fa-w-10"></i> Remove</button>
+                                                        <a href="<?php echo base_url() . "admin/detail/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>" class="mr-1 btn btn-primary btn-sm"><i class="fa pe-7s-note2 fa-w-10"></i> Details</a>
+                                                        <a class="mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>"><i class="fa pe-7s-edit fa-w-10"></i> Edit</a>
+                                                        <button class="mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove"><i class="fa pe-7s-trash fa-w-10"></i> Remove</button>
                                                     </td>
                                                 </tr>
 
