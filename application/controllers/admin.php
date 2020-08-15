@@ -301,17 +301,6 @@ class admin extends CI_Controller
             $data['files'] = $query->result();
         }
 
-        // $jnslayanan = urldecode($jnslayanan);
-
-
-        // $jnslayanan = $this->input->post('jnslayanan');
-
-
-
-
-        print_r("<br>");
-
-        // print_r($this->db->get('dataumum')->result());
 
         // // $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
