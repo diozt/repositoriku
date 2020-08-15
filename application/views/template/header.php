@@ -16,6 +16,62 @@
     <!-- Latest compiled and minified CSS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <style>
+        .blank_row {
+            height: 10px !important;
+            /* overwrites any other rules */
+            background-color: #FFFFFF;
+        }
+
+        .dropdown.dropdown-lg .dropdown-menu {
+            margin-top: -1px;
+            padding: 6px 20px;
+        }
+
+        .input-group-btn .btn-group {
+            display: flex !important;
+        }
+
+        .btn-group .btn {
+            border-radius: 0;
+            margin-left: -1px;
+        }
+
+        .btn-group .btn:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .btn-group .form-horizontal .btn[type="submit"] {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .form-horizontal .form-group {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .form-group .form-control:last-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        @media screen and (min-width: 768px) {
+            #adv-search {
+                width: 500px;
+                margin: 0 auto;
+            }
+
+            .dropdown.dropdown-lg {
+                position: static !important;
+            }
+
+            .dropdown.dropdown-lg .dropdown-menu {
+                min-width: 500px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -52,34 +108,38 @@
                 </span>
             </div>
             <div class="app-header__content" style="border-radius: 0px;">
-                <form action="<?= base_url() . "admin/search" ?>" method="post">
-                    <div class=" app-header-left" style="width: 140%;">
-                        <div class=" input-group">
+
+                <div class=" app-header-left" style="width: 140%;">
+                    <!-- <div class=" input-group">
                             <div class="input-group-btn search-panel">
                                 <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" style="border-radius: 0px;height:100%">
                                     <span id="search_concept">Advanced Search</span>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-left ml-0 pl-4" role="menu" style="width: 130%;border-radius: 0px;">
                                     <table style="width:80%">
-
+                                        <tr>
+                                            <th colspan="2">Cari Aplikasi Berdasarkan :</th>
+                                        </tr>
+                                        <tr class="blank_row"></tr>
                                         <tr>
                                             <td>Jenis Aplikasi</td>
-                                            <td colspan="2"><select class="form-control" name="jenispl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
-                                                    <option hidden>Pilih</option>
+                                            <td colspan="2"><select class="form-control" id="jenispl" name="jenispl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                    <option selected>Pilih</option>
                                                     <option>Apk Desktop</option>
-                                                    <option>Apk Client/Server</option>
+                                                    <option>Apk Client Server</option>
                                                     <option>Apk Web</option>
+                                                    <option>none</option>
                                             </td>
                                         </tr>
-                                        <tr style="margin-bottom: 10px;">
+                                        <tr>
                                             <td>Tanggal Entri</td>
-                                            <td style="margin-bottom: 10px;border-radius: 0px"><input type="text" class="form-control" placeholder="From" onfocus="(this.type='date')" name="from"></td>
-                                            <td><input type="text" class="form-control" placeholder="To" onfocus="(this.type='date')" name="to"></td>
+                                            <td style="margin-bottom: 10px;border-radius: 0px"><input type="text" class="form-control" placeholder="From" onfocus="(this.type='date')" id="from" name="from"></td>
+                                            <td><input type="text" class="form-control" placeholder="To" onfocus="(this.type='date')" name="to" id="to"></td>
                                         </tr>
                                         <tr>
                                             <td>Jenis Layanan Aplikasi</td>
-                                            <td colspan="2"><select class="form-control mt-2" name="lvl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
-                                                    <option hidden>Pilih</option>
+                                            <td colspan="2"><select class="form-control mt-2" id="jnslayanan" name="jnslayanan" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                    <option selected>Pilih</option>
                                                     <option>Pelaporan Masyarakat</option>
                                                     <option>Pembayaran</option>
                                                     <option>Pendaftaran</option>
@@ -88,29 +148,87 @@
                                             </td>
                                         </tr>
                                     </table>
-                                    <button type="button" class="btn btn-focus mt-2" style="border-radius: 0px;height:100%">Search</button>
+                                    <button type="submit" id="advs" onclick="advsearch()" class="btn btn-focus mt-2" style="border-radius: 0px;height:100%">Search</button>
                                 </ul>
                             </div>
-                            <input type="text" class="form-control" name="cari" id="search" placeholder="Search">
+
+                            <input type="text" class="form-control" name="cari" id="cari" placeholder="Search">
                             <span class=" input-group-btn">
                                 <button class="btn btn-transition btn btn-outline-info" type="submit" style="border-radius: 2px;"><img src="https://img.icons8.com/cotton/24/000000/search--v1.png" /></span></button>
                             </span>
-                </form>
-            </div>
+
+                </form> -->
+                    <div class="input-group ml-0" id="adv-search">
+                        <input type="text" name="cari" id="cari" class="form-control" placeholder="Search" />
+                        <div class="input-group-btn">
+                            <div class="btn-group" role="group">
+                                <div class="dropdown dropdown-lg">
+                                    <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="height: 100%;"><span class="caret"></span></button>
+                                    <div class="dropdown-menu dropdown-menu-right pl-3 pb-3" role="menu">
+                                        <!-- <ul class="dropdown-menu dropdown-menu-left ml-0 pl-4" role="menu" style="width: 130%;border-radius: 0px;"> -->
+                                        <form class="form-horizontal" role="form" action="<?= base_url()  . "admin/advanceSearch/" ?>" method="get">
+                                            <table style="width:100%">
+                                                <tr>
+                                                    <th colspan="2">Search By :</th>
+                                                </tr>
+                                                <tr class="blank_row"></tr>
+                                                <tr>
+                                                    <td colspan="2">Jenis Software</td>
+
+                                                    <td colspan="2"><select class="form-control" id="jenispl" name="jenispl" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                            <option selected hidden></option>
+                                                            <option>Apk Desktop</option>
+                                                            <option>Apk Client/Server</option>
+                                                            <option>Apk Web</option>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">Tanggal Entri</td>
+                                                    <td style="margin-bottom: 10px;border-radius: 0px"><input type="text" class="form-control" placeholder="From" onfocus="(this.type='date')" id="from" name="from"></td>
+                                                    <td><input type="text" class="form-control" placeholder="To" onfocus="(this.type='date')" name="to" id="to"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">Jenis Layanan Aplikasi</td>
+                                                    <td colspan="2"><select class="form-control mt-2" id="jnslayanan" name="jnslayanan" style="margin-bottom: 10px;border-radius: 0px;height:35px">
+                                                            <option selected hidden></option>
+                                                            <option>Pelaporan Masyarakat</option>
+                                                            <option>Pembayaran</option>
+                                                            <option>Pendaftaran</option>
+                                                            <option>Perizinan</option>
+                                                            <option>Publikasi Informasi</option>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <button type="submit" class="btn btn-primary mt-3">Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="search()" id="btcari" name="btcari" class="btn btn-transition btn btn-outline-info"><img src="https://img.icons8.com/cotton/24/000000/search--v1.png" /></span></button>
+                            </div>
+                        </div>
+                    </div>
 
 
-            <script>
-                var sc = document.getElementById("search");
-                sc.addEventListener("keyup", function(event) {
-                    if (event.keyCode === 13) {
 
-                        window.location = '<?php echo base_url()  . "admin/search/" ?>';
+                    <script>
+                        var btcari = document.getElementById("btcari");
+                        cari.addEventListener("keyup", function(event) {
+                            var cari = document.getElementById("cari");
+                            if (event.keyCode == 13) {
+                                window.location = '<?= base_url()  . "admin/search/" ?>' + cari.value;
+                            }
+                        });
 
 
-                    }
-                });
-            </script>
-            <!-- <ul class="header-menu nav">
+                        // var jenispl = document.getElementById("jenispl");
+
+                        function search() {
+                            var cari = document.getElementById("cari");
+                            window.location = '<?= base_url()  . "admin/search/" ?>' + cari.value;
+                        }
+                    </script>
+                    <!-- <ul class="header-menu nav">
                         <li class="dropdown nav-item">
                             <a href="javascript:void(0);" class="nav-link">
                                 <i class="nav-link-icon fa fa-cog"></i>
@@ -118,43 +236,43 @@
                             </a>
                         </li>
                     </ul> -->
-        </div>
-        <div class="app-header-right" style="width: 10%;">
-            <div class="header-btn-lg pr-0">
-                <div class="widget-content p-0">
-                    <div class="widget-content-wrapper">
-                        <div class="widget-content-left">
-                            <div class="btn-group">
-                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
-                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
-                                </a>
-                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                    <!-- <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                </div>
+                <div class="app-header-right" style="width: 10%;">
+                    <div class="header-btn-lg pr-0">
+                        <div class="widget-content p-0">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left">
+                                    <div class="btn-group">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                        </a>
+                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                            <!-- <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
                                             <h6 tabindex="-1" class="dropdown-header">Header</h6>
                                             <button type="button" tabindex="0" class="dropdown-item">Actions</button> -->
-                                    <div tabindex="-1" class="dropdown-divider"></div>
-                                    <a href="<?php echo base_url() . "auth/logout" ?>" class="dropdown-item">Log out</a>
+                                            <div tabindex="-1" class="dropdown-divider"></div>
+                                            <a href="<?php echo base_url() . "auth/logout" ?>" class="dropdown-item">Log out</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading">
-                                Admin
-                            </div>
-                            <div class="widget-subheading">
-                                <?= $admin['username']; ?>
-                            </div>
-                        </div>
-                        <!-- <div class="widget-content-right header-user-info ml-3">
+                                <div class="widget-content-left  ml-3 header-user-info">
+                                    <div class="widget-heading">
+                                        Admin
+                                    </div>
+                                    <div class="widget-subheading">
+                                        <?= $admin['username']; ?>
+                                    </div>
+                                </div>
+                                <!-- <div class="widget-content-right header-user-info ml-3">
                                         <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
                                             <i class="fa text-white fa-calendar pr-1 pl-1"></i>
                                         </button>
                                     </div>############### -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
