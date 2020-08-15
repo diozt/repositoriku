@@ -10,8 +10,4 @@ class M_Detail extends CI_Model
     {
         return $this->db->get_where('fileupload', array('namaSE' => $nama))->result();
     }
-
-    public function edit($id, $nama, $pj)
-    {
-    }
 }
