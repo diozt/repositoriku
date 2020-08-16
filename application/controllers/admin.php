@@ -223,23 +223,93 @@ class admin extends CI_Controller
         rmdir($dir);
     }
 
-    public function search()
+    public function search($key = null)
     {
-        $nama = $_POST['cari'];
+        $key = urldecode($key);
 
+        $this->db->like('nama', $key);
+        $this->db->or_like('url', $key);
+        $this->db->or_like('sasaran', $key);
+        $this->db->or_like('kategorisistem', $key);
+        $this->db->or_like('kategoriakses', $key);
+        $this->db->or_like('ruanglingkup', $key);
 
-        $this->db->like('nama', $nama);
-        $this->db->or_like('url', $nama);
-        $this->db->or_like('sasaran', $nama);
-        $this->db->or_like('kategorisistem', $nama);
-        $this->db->or_like('kategoriakses', $nama);
-        $this->db->or_like('ruanglingkup', $nama);
         $this->db->order_by('tglentri', 'desc');
         $query = $this->db->get('dataumum');
 
         $data['files'] = $query->result();
 
+
+
         // $data["files"] = $this->M_list->getAll(); // ambil data dari model
+        $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $this->load->view("template/header", $data); // kirim data ke view
+        $this->load->view("admin/landingpage", $data); // kirim data ke view
+
+    }
+
+    public function advanceSearch()
+    {
+
+        $jenispl = $this->input->get('jenispl');
+        $from = $this->input->get('from');
+        $to = $this->input->get('to');
+        $jnslayanan = $this->input->get('jnslayanan');
+
+        if ($jenispl != null || $jnslayanan != null || $from != null || $to != null) {
+            $this->db->select('id');
+            $this->db->from('plutama');
+            $this->db->where('jenispl', $jenispl);
+            $idjnspl = $this->db->get()->result();
+            $id1 = [];
+            foreach ($idjnspl as $x) :
+                array_push($id1, $x->id);
+            endforeach;
+
+            $this->db->select('id');
+            $this->db->from('jenislayanan');
+            $this->db->where('jenis', $jnslayanan);
+
+            $idjnsly = $this->db->get()->result();
+
+            $id2 = [];
+            foreach ($idjnsly as $x) :
+                array_push($id2, $x->id);
+            endforeach;
+
+            $id = array_unique(array_merge($id1, $id2));
+
+            if ($id != null) {
+                $this->db->where_in('id', $id);
+            }
+
+            if ($from != null || $to != null) {
+                date_default_timezone_set('Asia/Jakarta');
+                if ($to == null) {
+                    $to = date('Y-m-d H:i:s');
+                }
+
+                $from = strtotime($from);
+                $from = date('Y-m-d 00:00:00', $from);
+
+                $to = strtotime($to);
+                $to = date('Y-m-d 23:59:59', $to);
+
+                $this->db->where('tglentri >=', $from);
+                $this->db->where('tglentri <=', $to);
+            }
+            $this->db->order_by('tglentri', 'desc');
+
+
+            $query = $this->db->get('dataumum');
+            $data['files'] = $query->result();
+        } else {
+            $this->db->order_by('tglentri', 'desc');
+            $query = $this->db->get('dataumum');
+            $data['files'] = $query->result();
+        }
+
+        // // $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view("admin/landingpage", $data); // kirim data ke view
