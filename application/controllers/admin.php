@@ -250,13 +250,13 @@ class admin extends CI_Controller
 
     public function advanceSearch()
     {
-        date_default_timezone_set('Asia/Jakarta');
+
         $jenispl = $this->input->get('jenispl');
         $from = $this->input->get('from');
         $to = $this->input->get('to');
         $jnslayanan = $this->input->get('jnslayanan');
 
-        if ($jenispl != null || $jnslayanan != null) {
+        if ($jenispl != null || $jnslayanan != null || $from != null || $to != null) {
             $this->db->select('id');
             $this->db->from('plutama');
             $this->db->where('jenispl', $jenispl);
@@ -270,19 +270,6 @@ class admin extends CI_Controller
             $this->db->from('jenislayanan');
             $this->db->where('jenis', $jnslayanan);
 
-            if ($from != null || $to != null) {
-                $to = date('Y-m-d H:i:s');
-
-                $from = strtotime($from);
-                $from = date('Y-m-d h:i:s', $from);
-
-                $to = strtotime($to);
-                $to = date('Y-m-d h:i:s', $to);
-
-                $this->db->where('tglentri >=', $from);
-                $this->db->where('tglentri <=', $to);
-            }
-
             $idjnsly = $this->db->get()->result();
 
             $id2 = [];
@@ -292,15 +279,35 @@ class admin extends CI_Controller
 
             $id = array_unique(array_merge($id1, $id2));
 
-            $this->db->where_in('id', $id);
+            if ($id != null) {
+                $this->db->where_in('id', $id);
+            }
+
+            if ($from != null || $to != null) {
+                date_default_timezone_set('Asia/Jakarta');
+                if ($to == null) {
+                    $to = date('Y-m-d H:i:s');
+                }
+
+                $from = strtotime($from);
+                $from = date('Y-m-d 00:00:00', $from);
+
+                $to = strtotime($to);
+                $to = date('Y-m-d 23:59:59', $to);
+
+                $this->db->where('tglentri >=', $from);
+                $this->db->where('tglentri <=', $to);
+            }
             $this->db->order_by('tglentri', 'desc');
+
+
             $query = $this->db->get('dataumum');
             $data['files'] = $query->result();
         } else {
+            $this->db->order_by('tglentri', 'desc');
             $query = $this->db->get('dataumum');
             $data['files'] = $query->result();
         }
-
 
         // // $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
