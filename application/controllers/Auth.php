@@ -8,6 +8,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        ob_start(); # add this
     }
 
     public function index()
@@ -49,11 +50,13 @@ class Auth extends CI_Controller
                     echo "Selamat datang di halaman pejabat";
                 }
             } else {
+                // masih belum fix
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                     Password salah</div>');
                 $this->load->view('auth');
             }
         } else {
+            // masih belum fix
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
            akun tidak terdaftar</div>');
             $this->load->view('auth');
@@ -65,6 +68,10 @@ class Auth extends CI_Controller
     {
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('role');
+        $this->load->driver('cache');
+        $this->session->sess_destroy();
+        $this->cache->clean();
+        ob_clean();
         redirect('auth');
     }
 }
