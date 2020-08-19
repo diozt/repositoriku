@@ -104,7 +104,6 @@ class admin extends CI_Controller
 
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view('admin/edit', $data);
-        $this->load->view("template/footer", $data); // kirim data ke view
     }
 
     public function download($folder)
@@ -583,5 +582,27 @@ class admin extends CI_Controller
         $this->M_upload->update2($du);
 
         redirect("admin/detail/" . $du['id'] . '/' . $du['nama'] . '/' . $du['penanggungjawab']);
+    }
+
+    public function deleteverdsion($id, $pj, $folder, $ver, $page)
+    {
+
+        // delete table upload
+
+        $folder = urldecode($folder);
+        $ver = urldecode($ver);
+
+        $this->db->where('versi', $ver);
+        $this->db->delete('fileupload');
+
+        $this->recursiveRmDirversi($folder, $ver);
+
+        if ($page == 1) {
+            # jika dari halaman detail
+            redirect('admin/detail/' . $id . '/' . $folder . '/' . $pj, 'refresh');
+        } elseif ($page == 2) {
+            // jika dari halaman edit
+            redirect('admin/edit/' . $id . '/' . $folder . '/' . $pj, 'refresh');
+        }
     }
 };
