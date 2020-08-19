@@ -44,7 +44,7 @@ class Auth extends CI_Controller
                 if ($user['role'] == 1) {
                     // role 1 = admin
                     // echo "Selamat Datang";
-                    redirect('admin');
+                    redirect('pejabat');
                 } else if ($user['role'] == 2) {
                     // role 2 = pejabat
                     echo "Selamat datang di halaman pejabat";
