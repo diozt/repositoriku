@@ -421,7 +421,7 @@
 
                 </div>
             </div>
-            <form action="<?php echo base_url() . 'edit/upload_data' ?>" method="post" enctype='multipart/form-data'>
+            <form action="<?php echo base_url() . 'admin/update/' . $du['id'] ?>" method="post" enctype='multipart/form-data'>
                 <!-- <form action="#" method="post" enctype='multipart/form-data'> -->
                 <div class="mb-1 card">
                     <div class="card-header">

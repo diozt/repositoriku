@@ -432,7 +432,7 @@
                                 Remove
                             </button>
 
-                            <a class="mb-2 mr-2 btn-shadow btn btn-info" href="<?php echo base_url() . "admin/edit/" . $informasi->id . '/.' . $informasi->nama . '/.' . $informasi->penanggungjawab ?>">
+                            <a class="mb-2 mr-2 btn-shadow btn btn-info" href="<?php echo base_url() . "admin/edit/" . $informasi->id . '/' . $informasi->nama . '/' . $informasi->penanggungjawab ?>">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-edit fa-w-10"></i>
                                 </span>
