@@ -45,4 +45,31 @@ class M_upload extends CI_Model
     {
         return $this->db->insert('dataumum', $du);
     }
+
+    function update1($fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd)
+    {
+        $this->db->update('fungsiutama', $fu);
+        $this->db->update('jenislayanan', $jl);
+        $this->db->update('sistempengaman', $sp);
+        $this->db->update('sistemterkait', $st);
+        $this->db->update('sertifikasi', $sertif);
+        $this->db->update('penggunalayanan', $pl);
+        $this->db->update('penyelenggara', $plg);
+        $this->db->update('pkutama', $pku);
+        $this->db->update('pkkhusus', $pkk);
+        $this->db->update('plutama', $plu);
+        $this->db->update('plpendukung', $plp);
+        $this->db->update('tenagaahli', $ta);
+        $this->db->update('ketersediaanta', $kta);
+        $this->db->update('dasarhukum', $dh);
+        $this->db->update('sop', $sop);
+        $this->db->update('penanggungjawab', $pj);
+        $this->db->update('helpdesk', $hd);
+        // $hasil2 = $this->db->query("INSERT INTO ruanglingkup(ruangLingkup, pengembang) VALUES ('$ruanglingkup',' $pengembang')");
+    }
+
+    function update2($du)
+    {
+        return $this->db->insert('dataumum', $du);
+    }
 }

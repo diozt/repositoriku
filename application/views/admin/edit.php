@@ -421,7 +421,8 @@
 
                 </div>
             </div>
-            <form action="<?php echo base_url() . 'Upload/upload_data' ?>" method="post" enctype='multipart/form-data'>
+            <form action="<?php echo base_url() . 'edit/upload_data' ?>" method="post" enctype='multipart/form-data'>
+                <!-- <form action="#" method="post" enctype='multipart/form-data'> -->
                 <div class="mb-1 card">
                     <div class="card-header">
                         <ul class="nav nav-justified">
@@ -796,29 +797,43 @@
                             <div class="tab-pane show" id="tab-eg7-7" role="tabpanel">
                                 <!-- ########################### -->
                                 <div class="col-md-10">
-                                    <div class="main-card card">
-                                        <div class="card-body" id="dynamic_field">
-                                            <h2 class="card-title mb-3 mt-4">Upload File</h2>
-                                            <div class="position-relative form-group"><label>Masukkan Versi</label>
-                                                <input type="text" name="versi[]" id="versi" placeholder="Versi Aplikasi" class="form-control" id="emailhd" style="margin-bottom: 10px;">
-                                            </div>
-                                            <div class="position-relative form-group"><label>Document Perancangan</label><br>
-                                                <input type="file" name="doc[]" id="doc" style="margin-bottom: 10px;margin-top: 5px;">
-                                            </div>
-                                            <div class="position-relative form-group"><label>Database Master</label><br>
-                                                <input type="file" name="db[]" id="db" style="margin-bottom: 10px;margin-top: 5px;">
-                                            </div>
-                                            <div class="position-relative form-group"><label>Source Code</label><br>
-                                                <input type="file" name="sc[]" id="sc" style="margin-bottom: 10px;margin-top: 5px;">
-                                            </div>
-                                            <div class="position-relative form-group"><label>Lainnya</label><br>
-                                                <input type="file" name="lain[]" id="lain" style="margin-bottom: 10px;margin-top: 5px;">
-                                            </div>
+                                    <div class="card-body card" id="dynamic_field">
+                                        <div class="main-card card">
+                                            <div class="card-body">
+                                                <?php foreach ($files as $file) : ?>
+                                                    <ul class="list-group mb-1">
+                                                        <li class="list-group-item">
+                                                            <div class="widget-content p-0">
+                                                                <div class="widget-content-wrapper">
+                                                                    <div class="widget-content-left">
+                                                                        <div class="widget-heading text-primary"><?= $file->versi ?></div>
+                                                                        <div class="widget-subheading"><?= $du['nama'] ?></div>
+                                                                    </div>
+                                                                    <div class="widget-content-right">
 
+                                                                        <button class="mb-0 mr-2 btn btn-sm btn-icon btn-danger" data-toggle="modal" data-target="#popupRemoveversi">
+                                                                            <i class="pe-7s-trash btn-icon-wrapper"> </i>
+                                                                            Remove
+                                                                        </button>
+
+
+                                                                        <a class="mb-0 mr-2 btn btn-sm btn-icon btn-alternate pull-right" href="#">
+                                                                            <i class="fa pe-7s-download fa-w-10"></i>
+                                                                            Download
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </li>
+                                                    </ul>
+                                                    <!-- <a class="mb-2 mr-2 btn-shadow btn btn-success mt-4" href="<?php echo base_url() . "admin/addversi/" . $informasi->id . '/.' . $informasi->nama . '/.' . $informasi->penanggungjawab ?>"> -->
+                                                <?php endforeach; ?>
+                                            </div>
                                         </div>
                                     </div>
                                     <button type="button" name="add" id="add" class="btn btn-success mt-3">Add Other Version</button>
-                                    <input type="submit" name="submit" id="submit" class="btn btn-info mt-3" value="Upload" />
+                                    <input type="submit" name="submit" id="submit" class="btn btn-info mt-3" value="Update" />
                                 </div>
                                 <!-- ########################### -->
 
