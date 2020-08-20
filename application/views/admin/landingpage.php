@@ -49,7 +49,7 @@
                                     <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
                                     <div class=""><b>Admin</b>, Kominfo</div>
                                 </div> -->
-                            
+
                             </li>
                             <li class="app-sidebar__heading mt-3">Dashboards</li>
                             <li>
@@ -60,10 +60,10 @@
                             </li>
                             <div class="divider"></div>
                             <li>
-                            <a href="http://localhost/repositoriku/auth/logout" class="">
-                            <i class="metismenu-icon pe-7s-back-2"></i>
-                                <p class="text-danger">Log out</p>
-                            </a>
+                                <a href="http://localhost/repositoriku/auth/logout" class="">
+                                    <i class="metismenu-icon pe-7s-back-2"></i>
+                                    <p class="text-danger">Log out</p>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -147,58 +147,58 @@
                     </div>
 
                     <!-- <div class="card mb-3"> -->
-                        <div class="card-body mb-3">
+                    <div class="card-body mb-3">
                         <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card mb-1 widget-content">
-                                        <div class="widget-content-outer">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading text-info">Popular Apps!</div>
-                                                    <div class="widget-subheading">Last year expenses</div>
-                                                </div>
-                                                <div class="widget-content-right">
-                                                    <div class="widget-numbers text-info">1896</div>
-                                                </div>
+                            <div class="col-md-4">
+                                <div class="card mb-1 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading text-info">Popular Apps!</div>
+                                                <div class="widget-subheading">Last year expenses</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-info">1896</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-md-4">
-                                    <div class="card mb-1 widget-content">
-                                        <div class="widget-content-outer">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading text-success">Most Downloaded!</div>
-                                                    <div class="widget-subheading">Last year expenses</div>
-                                                </div>
-                                                <div class="widget-content-right">
-                                                    <div class="widget-numbers text-success">1896</div>
-                                                </div>
+                            <div class="col-md-4">
+                                <div class="card mb-1 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading text-success">Most Downloaded!</div>
+                                                <div class="widget-subheading">Last year expenses</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-success">1896</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="col-md-4">
-                                    <div class="card mb-1 widget-content">
-                                        <div class="widget-content-outer">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left">
-                                                    <div class="widget-heading text-warning">Posted Today!</div>
-                                                    <div class="widget-subheading">Last year expenses</div>
-                                                </div>
-                                                <div class="widget-content-right">
-                                                    <div class="widget-numbers text-warning">1896</div>
-                                                </div>
+                            <div class="col-md-4">
+                                <div class="card mb-1 widget-content">
+                                    <div class="widget-content-outer">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading text-warning">Posted Today!</div>
+                                                <div class="widget-subheading">Last year expenses</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="widget-numbers text-warning">1896</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <!-- col-md-12 -->
-                                <!-- <div class="col-md-12">
+                            </div>
+
+                            <!-- col-md-12 -->
+                            <!-- <div class="col-md-12">
                                     <div class="card mb-0 widget-content bg-deep-blue">
                                         <div class="card-body ">
                                             <div class="card-title fsize-1 ">Deskripsi</div>
@@ -207,8 +207,8 @@
                                     </div>
                                 </div> -->
 
-                            </div>
                         </div>
+                    </div>
                     <!-- </div> -->
 
                     <div class="row">

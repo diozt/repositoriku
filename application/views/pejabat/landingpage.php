@@ -36,7 +36,7 @@
                     <li class="mt-3">
                         <a href="#" class="btn-transition btn btn-outline-link">
                             <i class="metismenu-icon pe-7s-user"></i>
-                            <b class="text-primary mt-0">Rebecca James</b>
+                            <b class="text-primary mt-0"><?= $pejabat['username'] ?></b>
                             , Pejabat
                             <!-- <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
                             <div class=""><b>Admin</b>, Kominfo</div> -->
@@ -99,23 +99,23 @@
             <!-- <div class="card mb-3"> -->
             <div class="card-body mb-3">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="card mb-1 widget-content">
                             <div class="widget-content-outer">
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left">
                                         <div class="widget-heading text-info">Popular Apps!</div>
-                                        <div class="widget-subheading">Last year expenses</div>
+                                        <div class="widget-subheading"><?= $mostview->nama ?></div>
                                     </div>
                                     <div class="widget-content-right">
-                                        <div class="widget-numbers text-info">1896</div>
+                                        <div class="widget-numbers text-info"><?= $mostview->view ?></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="card mb-1 widget-content">
                             <div class="widget-content-outer">
                                 <div class="widget-content-wrapper">
@@ -131,7 +131,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <div class="card mb-1 widget-content">
                             <div class="widget-content-outer">
                                 <div class="widget-content-wrapper">
@@ -145,15 +145,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="card mb-1 widget-content">
                             <div class="widget-content-outer">
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left">
                                         <div class="widget-heading text-warning">Number of App!</div>
-                                        <div class="widget-subheading">Last year expenses</div>
+
                                     </div>
                                     <div class="widget-content-right">
                                         <div class="widget-numbers text-warning"><?= count($files) ?></div>
