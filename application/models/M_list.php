@@ -10,4 +10,11 @@ class M_list extends CI_Model
         // print_r($query);
         return $query->result();
     }
+
+    public function counter()
+    {
+
+        // $this->db->select_max('download');
+        return $this->db->query('select * from dataumum where download in( SELECT MAX(download) FROM dataumum )')->row();
+    }
 }

@@ -36,8 +36,8 @@
                     <li class="mt-3">
                         <a href="#" class="btn-transition btn btn-outline-link">
                             <i class="metismenu-icon pe-7s-user"></i>
-                            <b class="text-primary mt-0">John Doe</b>
-                            Kominfo, Admin
+                            <b class="text-primary mt-0">Rebecca James</b>
+                            , Pejabat
                             <!-- <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
                             <div class=""><b>Admin</b>, Kominfo</div> -->
                         </a>
@@ -49,21 +49,21 @@
                             <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
                             <div class=""><b>Admin</b>, Kominfo</div>
                         </div> -->
-                    
+
                     </li>
                     <li class="app-sidebar__heading mt-3">Dashboards</li>
                     <li>
-                        <a href="<?= base_url() . "admin" ?>" class="mm-active">
+                        <a href="<?= base_url() . "pejabat" ?>" class="mm-active">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Dashboard
                         </a>
                     </li>
                     <div class="divider"></div>
                     <li>
-                    <a href="http://localhost/repositoriku/auth/logout" class="">
-                    <i class="metismenu-icon pe-7s-back-2"></i>
-                        <p class="text-danger">Log out</p>
-                    </a>
+                        <a href="http://localhost/repositoriku/auth/logout" class="">
+                            <i class="metismenu-icon pe-7s-back-2 icon-gradient bg-danger"></i>
+                            <p class="text-danger">Log out</p>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="page-title-actions">
-                        <!-- <a href="<?php echo base_url() . 'admin/form' ?>" class="btn-shadow btn btn-dark">
+                        <!-- <a href="<?php echo base_url() . 'pejabat/form' ?>" class="btn-shadow btn btn-dark">
                             <i class="fa fa-plus-circle mr-2"></i>
                             Tambah
                         </a> -->
@@ -99,56 +99,72 @@
             <!-- <div class="card mb-3"> -->
             <div class="card-body mb-3">
                 <div class="row">
-                        <div class="col-md-4">
-                            <div class="card mb-1 widget-content">
-                                <div class="widget-content-outer">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading text-info">Popular Apps!</div>
-                                            <div class="widget-subheading">Last year expenses</div>
-                                        </div>
-                                        <div class="widget-content-right">
-                                            <div class="widget-numbers text-info">1896</div>
-                                        </div>
+                    <div class="col-md-3">
+                        <div class="card mb-1 widget-content">
+                            <div class="widget-content-outer">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading text-info">Popular Apps!</div>
+                                        <div class="widget-subheading">Last year expenses</div>
+                                    </div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers text-info">1896</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-md-4">
-                            <div class="card mb-1 widget-content">
-                                <div class="widget-content-outer">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading text-success">Most Downloaded!</div>
-                                            <div class="widget-subheading">Last year expenses</div>
-                                        </div>
-                                        <div class="widget-content-right">
-                                            <div class="widget-numbers text-success">1896</div>
-                                        </div>
+                    <div class="col-md-3">
+                        <div class="card mb-1 widget-content">
+                            <div class="widget-content-outer">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading text-success">Most Downloaded!</div>
+                                        <div class="widget-subheading"><?= $mostdownload->nama ?></div>
+                                    </div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers text-success"><?= $mostdownload->download ?></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-md-4">
-                            <div class="card mb-1 widget-content">
-                                <div class="widget-content-outer">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading text-warning">Posted Today!</div>
-                                            <div class="widget-subheading">Last year expenses</div>
-                                        </div>
-                                        <div class="widget-content-right">
-                                            <div class="widget-numbers text-warning">1896</div>
-                                        </div>
+                    <div class="col-md-3">
+                        <div class="card mb-1 widget-content">
+                            <div class="widget-content-outer">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading text-danger">Posted Today!</div>
+                                        <div class="widget-subheading">Last year expenses</div>
+                                    </div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers text-danger">1896</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- col-md-12 -->
-                        <!-- <div class="col-md-12">
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card mb-1 widget-content">
+                            <div class="widget-content-outer">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading text-warning">Number of App!</div>
+                                        <div class="widget-subheading">Last year expenses</div>
+                                    </div>
+                                    <div class="widget-content-right">
+                                        <div class="widget-numbers text-warning"><?= count($files) ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- col-md-12 -->
+                    <!-- <div class="col-md-12">
                             <div class="card mb-0 widget-content bg-deep-blue">
                                 <div class="card-body ">
                                     <div class="card-title fsize-1 ">Deskripsi</div>
@@ -157,8 +173,8 @@
                             </div>
                         </div> -->
 
-                    </div>
                 </div>
+            </div>
             <!-- </div> -->
 
             <div class="row">
@@ -217,9 +233,8 @@
                                             <!-- Actions -->
                                             <td class="text-center">
                                                 <?php $parameter = array($file->id, $file->nama) ?>
-                                                <a href="<?php echo base_url() . "admin/detail/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>" class="mr-1 btn btn-primary btn-sm"><i class="fa pe-7s-note2 fa-w-10"></i> Details</a>
-                                                <a class="mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>"><i class="fa pe-7s-edit fa-w-10"></i> Edit</a>
-                                                <button class="mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove"><i class="fa pe-7s-trash fa-w-10"></i> Remove</button>
+                                                <a href="<?php echo base_url() . "pejabat/detail/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>" class="mr-1 btn btn-primary btn-sm"><i class="fa pe-7s-note2 fa-w-10 mr-1"></i> Details</a>
+                                                <a class="btn-shadow btn btn-alternate mr-1 btn-sm" href="<?php echo base_url() . "pejabat/download/" . $file->nama . '/' . $file->id ?>"><i class="fa pe-7s-download fa-w-10 mr-1"></i>Download</a>
                                             </td>
                                         </tr>
 
@@ -267,30 +282,6 @@
     <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
 </div>
 </div>
-
-<!--  Modal -->
-<?php foreach ($files as $file) : ?>
-    <div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Are you sure to delete this?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <a href="<?php echo base_url() . "admin/delete/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab  ?>" class="btn btn-danger">Yes</a>
-                    <!-- <a href="<?php echo base_url() . "admin/recursiveRmDir" ?>" class="btn btn-danger">Yes</a> -->
-                </div>
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>
 
 <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
 
