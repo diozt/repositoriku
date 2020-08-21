@@ -107,8 +107,11 @@
                                         <div class="widget-heading text-info">Popular Apps!</div>
                                         <div class="widget-subheading"><?= $mostview->nama ?></div>
                                     </div>
-                                    <div class="widget-content-right">
+                                    <div class="widget-content-right text-center">
                                         <div class="widget-numbers text-info"><?= $mostview->view ?></div>
+                                        <div class="widget-subheading text-muted">
+                                            <p class="mb-0 text-muted">views</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -120,11 +123,14 @@
                             <div class="widget-content-outer">
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left">
-                                        <div class="widget-heading text-success">Most Downloaded!</div>
+                                        <div class="widget-heading text-success mt-0">Most Downloaded!</div>
                                         <div class="widget-subheading"><?= $mostdownload->nama ?></div>
                                     </div>
-                                    <div class="widget-content-right">
+                                    <div class="widget-content-right text-center">
                                         <div class="widget-numbers text-success"><?= $mostdownload->download ?></div>
+                                        <div class="widget-subheading text-muted">
+                                            <p class="mb-0 text-muted">downloads</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -152,11 +158,14 @@
                             <div class="widget-content-outer">
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left">
-                                        <div class="widget-heading text-warning">Number of App!</div>
-
+                                        <div class="widget-heading text-warning">Number of Apps!</div>
+                                        <div class="widget-subheading text-white">??</div>
                                     </div>
-                                    <div class="widget-content-right">
+                                    <div class="widget-content-right text-center">
                                         <div class="widget-numbers text-warning"><?= count($files) ?></div>
+                                        <div class="widget-subheading text-muted">
+                                            <p class="mb-0 text-muted">apps</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
