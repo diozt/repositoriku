@@ -155,10 +155,10 @@
                                         <div class="widget-content-wrapper">
                                             <div class="widget-content-left">
                                                 <div class="widget-heading text-info">Popular Apps!</div>
-                                                <div class="widget-subheading">Last year expenses</div>
+                                                <div class="widget-subheading"><?= $mostview->nama ?></div>
                                             </div>
                                             <div class="widget-content-right">
-                                                <div class="widget-numbers text-info">1896</div>
+                                                <div class="widget-numbers text-info"><?= $mostview->view ?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -171,10 +171,10 @@
                                         <div class="widget-content-wrapper">
                                             <div class="widget-content-left">
                                                 <div class="widget-heading text-success">Most Downloaded!</div>
-                                                <div class="widget-subheading">Last year expenses</div>
+                                                <div class="widget-subheading"><?= $mostdownload->nama ?></div>
                                             </div>
                                             <div class="widget-content-right">
-                                                <div class="widget-numbers text-success">1896</div>
+                                                <div class="widget-numbers text-success"><?= $mostdownload->download ?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -186,11 +186,11 @@
                                     <div class="widget-content-outer">
                                         <div class="widget-content-wrapper">
                                             <div class="widget-content-left">
-                                                <div class="widget-heading text-warning">Posted Today!</div>
-                                                <div class="widget-subheading">Last year expenses</div>
+                                                <div class="widget-heading text-warning">Number of App!</div>
+
                                             </div>
                                             <div class="widget-content-right">
-                                                <div class="widget-numbers text-warning">1896</div>
+                                                <div class="widget-numbers text-warning"><?= count($files) ?></div>
                                             </div>
                                         </div>
                                     </div>
