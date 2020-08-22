@@ -159,12 +159,12 @@
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left">
                                         <div class="widget-heading text-warning">Number of Apps!</div>
-                                        <div class="widget-subheading text-white">??</div>
+                                        <div class="widget-subheading">there are</div>
                                     </div>
                                     <div class="widget-content-right text-center">
                                         <div class="widget-numbers text-warning"><?= count($files) ?></div>
                                         <div class="widget-subheading text-muted">
-                                            <p class="mb-0 text-muted">apps</p>
+                                            <p class="mb-0 text-muted">uploaded</p>
                                         </div>
                                     </div>
                                 </div>
