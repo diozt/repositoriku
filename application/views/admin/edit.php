@@ -49,7 +49,7 @@
                             <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
                             <div class=""><b>Admin</b>, Kominfo</div>
                         </div> -->
-                    
+
                     </li>
                     <li class="app-sidebar__heading mt-3">Dashboards</li>
                     <li>
@@ -60,10 +60,10 @@
                     </li>
                     <div class="divider"></div>
                     <li>
-                    <a href="http://localhost/repositoriku/auth/logout" class="">
-                    <i class="metismenu-icon pe-7s-back-2"></i>
-                        <p class="text-danger">Log out</p>
-                    </a>
+                        <a href="http://localhost/repositoriku/auth/logout" class="">
+                            <i class="metismenu-icon pe-7s-back-2"></i>
+                            <p class="text-danger">Log out</p>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -75,9 +75,9 @@
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
                         <div class="page-title-icon">
-                                    <i class="pe-7s-edit icon-gradient bg-mean-fruit">
-                                    </i>
-                                </div>
+                            <i class="pe-7s-edit icon-gradient bg-mean-fruit">
+                            </i>
+                        </div>
                         <!-- <div>Analytics Dashboard
                                             <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
                                             </div>
@@ -471,7 +471,7 @@
                                 <div class="col-md-10">
                                     <div class="card-body card" id="dynamic_field">
                                         <div class="main-card">
-                                            
+
                                             <?php foreach ($files as $file) : ?>
                                                 <ul class="list-group mb-1">
                                                     <li class="list-group-item">
@@ -496,10 +496,11 @@
                                             <?php endforeach; ?>
 
                                             <button type="button" name="add" id="add" class="btn btn-success mt-3">Add Other Version</button>
-                                            <input type="submit" name="submit" id="submit" class="btn btn-info mt-3" value="Update" />
+                                            <button class="mb-0 mr-2 btn btn-info text-white mt-3" data-toggle="modal" data-target="#popupUpdateEdit">Update</button>
+                                            <!-- <input type="submit" name="submit" id="submit" class="btn btn-info mt-3" value="Update" /> -->
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                                 <!-- ########################### -->
 
@@ -545,7 +546,7 @@
 
             });
         </script>
-        
+
         <div class="app-wrapper-footer">
             <div class="app-footer">
                 <div class="app-footer__inner">
@@ -594,6 +595,28 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <a href="<?php echo base_url() . "admin/deleteverdsion/" . $du['id'] . '/' . $pj['nip'] . '/' . $du['nama'] . '/' . $file->versi  . '/' . 2 ?>" class="btn btn-danger">Remove</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  Modal update edit-->
+<div class="modal" tabindex="1000" id="popupUpdateEdit" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure to save changes?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <input type="submit" name="submit" id="submit" class="btn btn-success" value="Save Changes" />
+                <!-- <a href="<?php echo base_url() . "admin/deleteverdsion/" . $du['id'] . '/' . $pj['nip'] . '/' . $du['nama'] . '/' . $file->versi  . '/' . 2 ?>" class="btn btn-danger">Save</a> -->
             </div>
         </div>
     </div>
