@@ -251,7 +251,8 @@ class admin extends CI_Controller
 
         $data['files'] = $query->result();
 
-
+        $data["mostdownload"] = $this->M_list->counter();
+        $data["mostview"] = $this->M_list->counterview();
 
         // $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
