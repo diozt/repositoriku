@@ -46,8 +46,14 @@ class M_upload extends CI_Model
         return $this->db->insert('dataumum', $du);
     }
 
-    function update1($fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd)
+    function update1($fup, $du, $fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd)
     {
+
+
+        $fileupload = array('namaSE' => $du['nama']);
+        $this->db->where('namaSE',  $fup->nama);
+        $this->db->update('fileupload', $fileupload);
+
         $this->db->where('id', $fu['id']);
         $this->db->update('fungsiutama', $fu);
         $this->db->where('id', $jl['id']);

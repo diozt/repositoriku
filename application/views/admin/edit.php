@@ -496,8 +496,8 @@
                                             <?php endforeach; ?>
 
                                             <button type="button" name="add" id="add" class="btn btn-success mt-3">Add Other Version</button>
-                                            <button class="mb-0 mr-2 btn btn-info text-white mt-3" data-toggle="modal" data-target="#popupUpdateEdit">Update</button>
-                                            <!-- <input type="submit" name="submit" id="submit" class="btn btn-info mt-3" value="Update" /> -->
+                                            <button type="button" class="mb-0 mr-2 btn btn-info text-white mt-3" data-toggle="modal" data-target="#popupUpdateEdit">Update</button>
+
                                         </div>
                                     </div>
 
@@ -600,45 +600,27 @@
     </div>
 </div>
 
-<!--  Modal update edit-->
-<div class="modal" tabindex="1000" id="popupUpdateEdit" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--  Modal hapus versi-->
+<div class="modal" tabindex="1000" id="popupUpdateEdit" role="dialog" aria-labelledby="popupUpdateEditLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Save Changes</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Are you sure to delete this?
-            </div>
-            <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a href="<?php echo base_url() . "admin/deleteverdsion/" . $du['id'] . '/' . $pj['nip'] . '/' . $du['nama'] . '/' . $file->versi  . '/' . 2 ?>" class="btn btn-danger">Remove</a>
-            </div> -->
-        </div>
-    </div>
-</div>
-<!-- <div class="modal" id="popupUpdateEdit" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure to save changes?
+                Are you sure to save this changes?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                 <input type="submit" name="submit" id="submit" class="btn btn-success" value="Save Changes">
             </div>
         </div>
     </div>
-</div> -->
+</div>
+
 
 </form>
 

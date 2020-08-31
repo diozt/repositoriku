@@ -476,6 +476,11 @@ class admin extends CI_Controller
 
 
         //untuk file upload
+        $this->db->select('nama');
+        $this->db->from('dataumum');
+        $this->db->where('id', $id);
+        $fup = $this->db->get()->row();
+
         // menghitung jumlah versi file yag diupload
         if (is_countable($this->input->post('versi'))) {
             $number = count($_POST["versi"]);
@@ -604,7 +609,7 @@ class admin extends CI_Controller
 
 
         // UPLOAD table selain file upload
-        $this->M_upload->update1($fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd);
+        $this->M_upload->update1($fup, $du, $fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd);
 
         // upload table data umum
         $this->M_upload->update2($du);
