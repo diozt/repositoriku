@@ -53,13 +53,13 @@
                             </li>
                             <li class="app-sidebar__heading mt-3">Dashboards</li>
                             <li>
-                                <a href="<?= base_url() . "admin" ?>" class="mm-active">
+                                <a href="<?= base_url() . "admin" ?>" class="">
                                     <i class="metismenu-icon pe-7s-portfolio"></i>
                                     Dashboard
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url() . "admin/user" ?>" class="">
+                                <a href="<?= base_url() . "admin/user" ?>" class="mm-active">
                                     <i class="metismenu-icon pe-7s-users"></i>
                                     User Management
                                 </a>
@@ -81,24 +81,24 @@
                         <div class="page-title-wrapper">
                             <div class="page-title-heading">
                                 <div class="page-title-icon">
-                                    <i class="pe-7s-portfolio icon-gradient bg-amy-crisp">
+                                    <i class="pe-7s-users icon-gradient bg-happy-fisher">
                                     </i>
                                 </div>
                                 <!-- <div>Analytics Dashboard
                                             <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
                                             </div>
                                         </div>######### -->
-                                <div> Dashboard Repository
-                                    <div class="page-title-subheading">Sistem Elektronik Kominfo Kota Kediri.
+                                <div> User Management
+                                    <div class="page-title-subheading">Admin or Pejabat User Management
                                     </div>
                                 </div>
                             </div>
                             <div class="page-title-actions">
-                                <a href="<?php echo base_url() . 'admin/form' ?>" class="btn-shadow btn btn-dark">
-                                    <!-- <i class="pe pe-7s-plus pe-w-20"></i> -->
-                                    <i class="fa fa-plus-circle mr-2"></i>
-                                    Tambah
-                                </a>
+                                <!-- <a href="<?php echo base_url() . 'admin/form' ?>" class="btn-shadow btn btn-dark"> -->
+                                <!-- <i class="pe pe-7s-plus pe-w-20"></i> -->
+                                <!-- <i class="fa fa-plus-circle mr-2"></i> -->
+                                <!-- Tambah -->
+                                <!-- </a> -->
                                 <!-- <button type="button" data-toggle="tooltip" title="Example Tooltip" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
                                             <i class="fa fa-star"></i>
                                         </button> -->
@@ -152,84 +152,10 @@
                         </div>
                     </div>
 
-                    <!-- <div class="card mb-3"> -->
-                    <div class="card-body mb-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card mb-1 widget-content">
-                                    <div class="widget-content-outer">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left">
-                                                <div class="widget-heading text-info">Popular Apps!</div>
-                                                <div class="widget-subheading"><?= $mostview->nama ?></div>
-                                            </div>
-                                            <div class="widget-content-right text-center">
-                                                <div class="widget-numbers text-info"><?= $mostview->view ?></div>
-                                                <div class="widget-subheading text-muted">
-                                                    <p class="mb-0 text-muted">views</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card mb-1 widget-content">
-                                    <div class="widget-content-outer">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left">
-                                                <div class="widget-heading text-success">Most Downloaded!</div>
-                                                <div class="widget-subheading"><?= $mostdownload->nama ?></div>
-                                            </div>
-                                            <div class="widget-content-right text-center">
-                                                <div class="widget-numbers text-success"><?= $mostdownload->download ?></div>
-                                                <div class="widget-subheading text-muted">
-                                                    <p class="mb-0 text-muted">donwloads</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="card mb-1 widget-content">
-                                    <div class="widget-content-outer">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left">
-                                                <div class="widget-heading text-warning">Number of App!</div>
-                                                <class class="widget-subheading">there are</class>
-                                            </div>
-                                            <div class="widget-content-right text-center">
-                                                <div class="widget-numbers text-warning"><?= count($files) ?></div>
-                                                <div class="widget-subheading text-muted">
-                                                    <p class="mb-0 text-muted">uploaded</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- col-md-12 -->
-                            <!-- <div class="col-md-12">
-                                    <div class="card mb-0 widget-content bg-deep-blue">
-                                        <div class="card-body ">
-                                            <div class="card-title fsize-1 ">Deskripsi</div>
-                                            <p>Isi Deskripsi</p>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                        </div>
-                    </div>
-                    <!-- </div> -->
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
-                                <div class="card-header">List Application
+                                <div class="card-header">User Management
                                     <div class="btn-actions-pane-right">
                                         <!-- <div role="group" class="btn-group-sm btn-group">
                                                     <button class="active btn btn-focus">Last Week</button>
@@ -237,66 +163,40 @@
                                                 </div>########## -->
                                     </div>
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">No</th>
-                                                <th class="text-center">File Name</th>
-                                                <th class="text-center">Entry Time</th>
-                                                <!-- <th class="text-center">Status</th> -->
-                                                <th class="text-center">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = 1;
-                                            foreach ($files as $file) :
-                                            ?>
-
-                                                <tr>
-                                                    <!-- Id -->
-                                                    <td class="text-center text-muted">
-                                                        <?= $i ?>
-                                                    </td>
-
-                                                    <!-- File Name -->
-                                                    <td>
-                                                        <div class="widget-content p-0">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left mr-3">
-                                                                    <!-- <div class="widget-content-left">
-                                                                                <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
-                                                                            </div> -->
-                                                                </div>
-                                                                <div class="widget-content-left flex2">
-                                                                    <div class="widget-heading"><?php echo $file->nama; ?></div>
-                                                                    <div class="widget-subheading opacity-7"><?php echo $file->deskripsi; ?></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <!-- Description -->
-                                                    <td class="text-center"><?= time_elapsed_string($file->tglentri); ?></td>
-
-                                                    <!-- Actions -->
-                                                    <td class="text-center">
-                                                        <?php $parameter = array($file->id, $file->nama) ?>
-                                                        <a href="<?php echo base_url() . "admin/detail/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>" class="mr-1 btn btn-primary btn-sm"><i class="fa pe-7s-note2 fa-w-10"></i> Details</a>
-                                                        <a class="mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>"><i class="fa pe-7s-edit fa-w-10"></i> Edit</a>
-                                                        <button class="mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove"><i class="fa pe-7s-trash fa-w-10"></i> Remove</button>
-                                                    </td>
-                                                </tr>
-
-                                            <?php $i++;
-                                            endforeach; ?>
-                                        </tbody>
-                                    </table>
+                                <div class="card-body">
+                                    <form action="<?= base_url() . 'admin/user' ?>" method="POST" class="need-validation">
+                                        <div class="row">
+                                            <div class="col-6 mb-4">
+                                                <label for="exampleEmail" class="">Username</label>
+                                                <input type="text" id="user" name="userName" placeholder="Username here..." class="form-control-sm form-control" value="<?= set_value('userName') ?>">
+                                                <?= form_error('userName', '<small class="text-danger pl-1">', '</small>') ?>
+                                            </div>
+                                            <div class="col-6 mb-4">
+                                                <label for="exampleEmail" class="">Select Position</label>
+                                                <select class="form-control-sm form-control" name="role" value="<?= set_value('role') ?>">
+                                                    <option hidden>Pilih Role</option>
+                                                    <option value="1">Admin</option>
+                                                    <option value="2">Pejabat</option>
+                                                </select>
+                                                <?= form_error('role', '<small class="text-danger pl-1">', '</small>') ?>
+                                            </div>
+                                            <div class="col-6 mb-3">
+                                                <label for="exampleEmail" class="">Password</label>
+                                                <input type="text" id="user" name="userPass" placeholder="Password here..." class="form-control-sm form-control" value="<?= set_value('userPass') ?>">
+                                                <?= form_error('userPass', '<small class="text-danger pl-1">', '</small>') ?>
+                                            </div>
+                                            <div class="col-6 mb-3">
+                                                <label for="exampleEmail" class="">Confirm Password</label>
+                                                <input type="text" id="user" name="userCPass" placeholder="Confirm Password here..." class="form-control-sm form-control" value="<?= set_value('userCPass') ?>">
+                                                <?= form_error('userCPass', '<small class="text-danger pl-1">', '</small>') ?>
+                                            </div>
+                                            <div class="col-12 text-right">
+                                                <label for="submit" class="text-white">btn-label</label>
+                                                <button class="btn btn-primary btn mt-2" data-toggle="modal" data-target="#popupSubmitUser">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <!-- <div class="d-block text-center card-footer">
-                                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                                            <button class="btn-wide btn btn-success">Save</button>###############
-                                        </div> -->
                             </div>
                         </div>
                     </div>
@@ -335,11 +235,11 @@
 
         <!--  Modal -->
         <?php foreach ($files as $file) : ?>
-            <div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal" tabindex="1000" id="popupSubmitUser" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Simpan</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -349,7 +249,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <a href="<?php echo base_url() . "admin/delete/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab  ?>" class="btn btn-danger">Yes</a>
+                            <a href="<?php echo base_url() . "admin/delete/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab  ?>" type="submit" class="btn btn-danger">Simpan</a>
                             <!-- <a href="<?php echo base_url() . "admin/recursiveRmDir" ?>" class="btn btn-danger">Yes</a> -->
                         </div>
                     </div>

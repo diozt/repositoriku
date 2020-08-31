@@ -11,6 +11,7 @@ class admin extends CI_Controller
         $this->load->model("M_upload");
         $this->load->library('zip');
         $this->load->library('upload');
+        $this->load->library('form_validation');
         $logged_in = $this->session->userdata('user');
         if ($logged_in != TRUE || empty($logged_in)) {
             #user not logged in
@@ -106,6 +107,30 @@ class admin extends CI_Controller
 
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view('admin/edit', $data);
+    }
+
+    public function user()
+    {
+        $this->form_validation->set_rules('userName', 'Username', 'trim|required');
+        $this->form_validation->set_rules('role', 'Role', 'trim|required');
+        $this->form_validation->set_rules('userPass', 'Password', 'trim|required|min_length[3]');
+        $this->form_validation->set_rules('userCPass', 'Confirm Password', 'required|matches[userPass]', [
+            'matches' => 'Password not match'
+        ]);
+
+        if ($this->form_validation->run() == false) {
+            $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+            $this->load->view("template/header", $data); // kirim data ke view
+            $this->load->view('admin/user', $data);
+        } else {
+            $data = [
+                'username' => $this->input->post('userName'),
+                'pass' => password_hash($this->input->post('userCPass'), PASSWORD_DEFAULT),
+                'role' => $this->input->post('role')
+            ];
+
+            $this->db->insert('user', $data);
+        }
     }
 
     public function download($folder)

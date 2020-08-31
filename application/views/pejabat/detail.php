@@ -54,7 +54,7 @@
                     <li class="app-sidebar__heading mt-3">Dashboards</li>
                     <li>
                         <a href="<?= base_url() . "pejabat" ?>" class="mm-active">
-                            <i class="metismenu-icon pe-7s-rocket"></i>
+                            <i class="metismenu-icon pe-7s-portfolio"></i>
                             Dashboard
                         </a>
                     </li>

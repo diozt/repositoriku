@@ -510,7 +510,7 @@
                     </div>
                 </div>
 
-            </form>
+
         </div>
         <script>
             $(document).ready(function() {
@@ -611,18 +611,36 @@
                 </button>
             </div>
             <div class="modal-body">
+                Are you sure to delete this?
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <a href="<?php echo base_url() . "admin/deleteverdsion/" . $du['id'] . '/' . $pj['nip'] . '/' . $du['nama'] . '/' . $file->versi  . '/' . 2 ?>" class="btn btn-danger">Remove</a>
+            </div> -->
+        </div>
+    </div>
+</div>
+<!-- <div class="modal" id="popupUpdateEdit" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
                 Are you sure to save changes?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <input type="submit" name="submit" id="submit" class="btn btn-success" value="Save Changes" />
-                <!-- <a href="<?php echo base_url() . "admin/deleteverdsion/" . $du['id'] . '/' . $pj['nip'] . '/' . $du['nama'] . '/' . $file->versi  . '/' . 2 ?>" class="btn btn-danger">Save</a> -->
+                <input type="submit" name="submit" id="submit" class="btn btn-success" value="Save Changes">
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-
+</form>
 
 <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
 

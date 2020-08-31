@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="icon" type="image/png" href="<?= base_url('assets/login/'); ?>images/icons/favicon.ico" /> -->
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -21,6 +21,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="app-container app-theme-white body-tabs-shadow">
         <div class="app-container">
@@ -61,7 +62,7 @@
                                     </div>
                                     <img class="w-100" style="opacity: 0.4; width:100%; height: 100%; object-fit: cover; " src="<?= base_url('assets/baru/'); ?>assets/images/carousel_login/4.jpg" alt="Fourth slide">
                                 </div>
-                                
+
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -82,7 +83,7 @@
                             </h4>
                             <!-- <h6 class="mt-3">No account? <a href="javascript:void(0);" class="text-primary">Sign up now</a></h6> -->
                             <div class="divider row mb-4"></div>
-                            <form class="" method="post" action="<?= base_url('auth'); ?>">
+                            <form class="needs-validation" method="post" action="<?= base_url('auth'); ?>">
                                 <div class="form-row">
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
@@ -90,13 +91,34 @@
                                             <input type="text" id="user" name="user" placeholder="Username here..." class="form-control">
                                         </div>
                                     </div>
+
+                                    <!-- <div class="input-group col-md-6">
+                                        <label for="examplePassword" class="">Password</label>
+                                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-eye"></i></span>
+                                        </div>
+                                    </div> -->
+
                                     <div class="col-md-6">
-                                        <div class="position-relative form-group">
+                                        <div class="position-relative">
                                             <label for="examplePassword" class="">Password</label>
                                             <!-- <span class="btn-show-pass">
-                                                    <i class="fa fa-eye"></i>
+                                                <i class="fa fa-eye"></i>
                                             </span> -->
-                                            <input type="password" id="password" name="password" placeholder="Password here..." class="form-control ">
+
+                                            <div class="input-group-append">
+                                                <input type="password" id="password" name="password" placeholder="Password here..." class="form-control ">
+                                                <span class="btn btn-outline-link" id="mybutton" onclick="change()">
+                                                    <i class="fa fa-eye mt-1 ml-1 mr-8"></i>
+                                                </span>
+                                            </div>
+
+                                            <!-- <div class="input-group-append">
+                                                <span id="mybutton" onclick="change()"><i class="fa fa-eye"></i></span>
+                                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-eye"></i></span>
+                                            </div> -->
+
                                         </div>
                                     </div>
                                 </div>
@@ -112,4 +134,17 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
+    <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
+    <script>
+        function change() {
+            var x = document.getElementById("password").type;
+
+            if (x == 'password') {
+                document.getElementById('password').type = 'text';
+                document.getElementById('mybutton').innerHTML = '<i class="btn-outline-link ml-1 mt-1 fa fa-eye-slash"></i>';
+            } else {
+                document.getElementById('password').type = 'password';
+                document.getElementById('mybutton').innerHTML = '<i class="btn-outline-link mt-1 ml-1 fa fa-eye"></i>';
+            }
+        }
+    </script>
