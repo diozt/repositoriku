@@ -10,6 +10,14 @@ class M_list extends CI_Model
         // print_r($query);
         return $query->result();
     }
+    public function getUser()
+    {
+        $this->db->select('*');
+        $this->db->from('user');
+        $query = $this->db->get();
+        // print_r($query);
+        return $query->result();
+    }
 
     public function counter()
     {

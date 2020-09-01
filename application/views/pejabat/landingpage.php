@@ -60,7 +60,7 @@
                     </li>
                     <div class="divider"></div>
                     <li>
-                        <a href="http://localhost/repositoriku/auth/logout" class="">
+                        <a href="<?= base_url() . "auth/logout" ?>" class="">
                             <i class="metismenu-icon pe-7s-back-2 icon-gradient bg-danger"></i>
                             <p class="text-danger">Log out</p>
                         </a>

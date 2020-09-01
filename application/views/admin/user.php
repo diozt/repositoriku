@@ -36,19 +36,10 @@
                             <li class="mt-3">
                                 <a href="#" class="btn-transition btn btn-outline-link">
                                     <i class="metismenu-icon pe-7s-user"></i>
-                                    <b class="text-primary mt-0">John Doe</b>
-                                    Kominfo, Admin
-                                    <!-- <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
-                                    <div class=""><b>Admin</b>, Kominfo</div> -->
+                                    <b class="text-primary mt-0">Hai <?= $admin['username'] ?></b>
+                                    , Selamat Datang
                                 </a>
                                 <div class="divider"></div>
-                                <!-- <div class="widget-content-left mt-3">
-                                    <img width="42" class="rounded-circle text-center " src="<?= base_url('./assets/'); ?>baru/assets/images/avatars/9.jpg" alt="">
-                                </div>
-                                <div class="widget-content-right">
-                                    <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
-                                    <div class=""><b>Admin</b>, Kominfo</div>
-                                </div> -->
 
                             </li>
                             <li class="app-sidebar__heading mt-3">Dashboards</li>
@@ -59,14 +50,14 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= base_url() . "admin/user" ?>" class="mm-active">
+                                <a href="<?= base_url() . "admin/listUser" ?>" class="mm-active">
                                     <i class="metismenu-icon pe-7s-users"></i>
                                     User Management
                                 </a>
                             </li>
                             <div class="divider"></div>
                             <li>
-                                <a href="http://localhost/repositoriku/auth/logout" class="">
+                                <a href="<?= base_url() . "auth/logout" ?>" class="">
                                     <i class="metismenu-icon pe-7s-back-2"></i>
                                     <p class="text-danger">Log out</p>
                                 </a>
@@ -180,14 +171,15 @@
                                                 </select>
                                                 <?= form_error('role', '<small class="text-danger pl-1">', '</small>') ?>
                                             </div>
+
                                             <div class="col-6 mb-3">
                                                 <label for="exampleEmail" class="">Password</label>
-                                                <input type="text" id="user" name="userPass" placeholder="Password here..." class="form-control-sm form-control" value="<?= set_value('userPass') ?>">
+                                                <input type="password" id="user" name="userPass" placeholder="Password here..." class="form-control-sm form-control" value="<?= set_value('userPass') ?>">
                                                 <?= form_error('userPass', '<small class="text-danger pl-1">', '</small>') ?>
                                             </div>
                                             <div class="col-6 mb-3">
                                                 <label for="exampleEmail" class="">Confirm Password</label>
-                                                <input type="text" id="user" name="userCPass" placeholder="Confirm Password here..." class="form-control-sm form-control" value="<?= set_value('userCPass') ?>">
+                                                <input type="password" id="user" name="userCPass" placeholder="Confirm Password here..." class="form-control-sm form-control" value="<?= set_value('userCPass') ?>">
                                                 <?= form_error('userCPass', '<small class="text-danger pl-1">', '</small>') ?>
                                             </div>
                                             <div class="col-12 text-right">

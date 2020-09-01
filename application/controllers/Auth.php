@@ -30,10 +30,16 @@ class Auth extends CI_Controller
         $password =  $this->input->post('password');
 
         $user = $this->db->get_where('user', ['username' => $username])->row_array();
+        // if (password_verify($password, $user['pass'])) {
+        //     print "Logged in";
+        // } else {
+        //     print "Password Incorrect";
+        // }
 
         if ($user) {
             //cek password
-            if ($password == $user['pass']) {
+            if (password_verify($password, $user['pass'])) {
+                // if ($password == $user['pass']) {
                 $data = [
                     'user' => $user['username'],
                     'role' => $user['role']

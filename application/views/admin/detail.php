@@ -36,34 +36,31 @@
                     <li class="mt-3">
                         <a href="#" class="btn-transition btn btn-outline-link">
                             <i class="metismenu-icon pe-7s-user"></i>
-                            <b class="text-primary mt-0">John Doe</b>
-                            Kominfo, Admin
-                            <!-- <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
-                            <div class=""><b>Admin</b>, Kominfo</div> -->
+                            <b class="text-primary mt-0">Hai <?= $admin['username'] ?></b>
+                            , Selamat Datang
                         </a>
                         <div class="divider"></div>
-                        <!-- <div class="widget-content-left mt-3">
-                            <img width="42" class="rounded-circle text-center " src="<?= base_url('./assets/'); ?>baru/assets/images/avatars/9.jpg" alt="">
-                        </div>
-                        <div class="widget-content-right">
-                            <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
-                            <div class=""><b>Admin</b>, Kominfo</div>
-                        </div> -->
-                    
+
                     </li>
                     <li class="app-sidebar__heading mt-3">Dashboards</li>
                     <li>
-                        <a href="<?= base_url() . "admin" ?>" class="mm-active">
-                            <i class="metismenu-icon pe-7s-rocket"></i>
+                        <a href="<?= base_url() . "admin" ?>">
+                            <i class="metismenu-icon pe-7s-portfolio"></i>
                             Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url() . "admin/listUser" ?>" class="">
+                            <i class="metismenu-icon pe-7s-users"></i>
+                            User Management
                         </a>
                     </li>
                     <div class="divider"></div>
                     <li>
-                    <a href="http://localhost/repositoriku/auth/logout" class="">
-                    <i class="metismenu-icon pe-7s-back-2"></i>
-                        <p class="text-danger">Log out</p>
-                    </a>
+                        <a href="<?= base_url() . "auth/logout" ?>" class="">
+                            <i class="metismenu-icon pe-7s-back-2"></i>
+                            <p class="text-danger">Log out</p>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -78,10 +75,6 @@
                             <i class="pe-7s-magic-wand icon-gradient bg-mixed-hopes">
                             </i>
                         </div>
-                        <!-- <div>Analytics Dashboard
-                                            <div class="page-title-subheading">This is an example dashboard created using build-in elements and components.
-                                            </div>
-                                        </div>######### -->
 
                         <?php foreach ($info as $informasi) : ?>
                             <div> Lebih Detail Tentang Aplikasi <?= $informasi->nama; ?>
@@ -90,12 +83,6 @@
                             </div>
                     </div>
                     <div class="page-title-actions">
-                        <!-- <a href="<?php echo base_url() . 'admin/view' ?>" class="btn-shadow mr-3 btn btn-dark">
-                            <span class="btn-icon-wrapper pr-2 opacity-7">
-                                <i class="pe pe-7s-plus pe-w-20"></i>
-                            </span>
-                            Upload
-                        </a> -->
                         <div class="d-inline-block">
 
                             <!-- <a href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>" class="btn btn-success btn-sm">Download</a> -->
@@ -119,12 +106,7 @@
                                 </span>
                                 Download
                             </a>
-                            <!-- <button type="button" aria-haspopup="true" aria-expanded="false" class="btn-shadow btn btn-info">
-                                                <span class="btn-icon-wrapper pr-2 opacity-7">
-                                                    <i class="fa pe-7s-download fa-w-10"></i>
-                                                </span>
-                                                Download
-                                            </button> -->
+
                         </div>
                     </div>
                 </div>
@@ -717,24 +699,10 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- <span class="name"><?= $file['versi'] ?></span> -->
-                                                        <!-- <button class="mb-2 mr-2 btn-actions-pane-right btn-sm btn-icon btn btn-warning"><i class="pe-7s-trash btn-icon-wrapper"> </i>Warning</button> -->
-                                                        <!-- <span>
-                                                            <button class="mb-2 mr-2 btn-shadow btn btn-sm btn-danger pull-right" data-toggle="modal" data-target="#popupRemoveversi">
-                                                                <span class="btn-icon-wrapper pr-2 opacity-7">
-                                                                    <i class="fa pe-7s-trash fa-w-10"></i>
-                                                                </span>
-                                                                Remove
-                                                            </button></span>
-                                                        <span>
-                                                            <a class="mb-2 mr-2 btn-shadow btn btn-sm btn-alternate pull-right" href="<?php echo base_url() . "admin/downloadversi/" . $informasi->nama . '/' . $file['versi'] ?>">
-                                                                <i class="fa pe-7s-download fa-w-10"></i>
-                                                                Download
-                                                            </a>
-                                                        </span> -->
+
                                                     </li>
                                                 </ul>
-                                                <!-- <a class="mb-2 mr-2 btn-shadow btn btn-success mt-4" href="<?php echo base_url() . "admin/addversi/" . $informasi->id . '/.' . $informasi->nama . '/.' . $informasi->penanggungjawab ?>"> -->
+
                                             <?php endforeach; ?>
                                         </div>
                                         <!-- ######################## -->
@@ -769,20 +737,12 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- <div class="app-footer-right">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a href="javascript:void(0);" class="nav-link">
-                            Footer Link 4
-                        </a>
-                    </li>
-                </ul>
-            </div> -->
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- <script src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+
 </div>
 </div>
 
@@ -834,11 +794,7 @@
 
 <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('table.display').DataTable();
-    });
-</script>
+
 </body>
 
 </html>

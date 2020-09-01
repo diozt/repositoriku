@@ -109,13 +109,25 @@ class admin extends CI_Controller
         $this->load->view('admin/edit', $data);
     }
 
+    public function listUser()
+    {
+        $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $data["user"] = $this->M_list->getUser();
+        $this->load->view("template/header", $data); // kirim data ke view
+        $this->load->view('admin/listUser', $data);
+    }
+
     public function user()
     {
         $this->form_validation->set_rules('userName', 'Username', 'trim|required');
         $this->form_validation->set_rules('role', 'Role', 'trim|required');
-        $this->form_validation->set_rules('userPass', 'Password', 'trim|required|min_length[3]');
-        $this->form_validation->set_rules('userCPass', 'Confirm Password', 'required|matches[userPass]', [
-            'matches' => 'Password not match'
+        $this->form_validation->set_rules('userPass', 'Password', 'trim|required|min_length[3]|matches[userCPass]', [
+            'matches' => 'Password not match',
+            'min_length' => 'Password too Short!'
+        ]);
+        $this->form_validation->set_rules('userCPass', 'Password', 'trim|required|min_length[3]|matches[userPass]', [
+            'matches' => 'Password not match',
+            'min_length' => 'Password too Short!'
         ]);
 
         if ($this->form_validation->run() == false) {
@@ -125,11 +137,13 @@ class admin extends CI_Controller
         } else {
             $data = [
                 'username' => $this->input->post('userName'),
-                'pass' => password_hash($this->input->post('userCPass'), PASSWORD_DEFAULT),
+                'pass' => password_hash($this->input->post('userPass'), PASSWORD_DEFAULT),
                 'role' => $this->input->post('role')
             ];
 
             $this->db->insert('user', $data);
+            // print_r($data);
+            redirect('admin/listUser');
         }
     }
 
