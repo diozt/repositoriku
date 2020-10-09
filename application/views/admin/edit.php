@@ -418,10 +418,10 @@
                                         <div class="card-body">
                                             <h2 class="card-title mb-3 mt-4">Penanggungjawab</h2>
                                             <div class="position-relative form-group"><label>Nama PenanggungJawab</label>
-                                                <input type="text" name="namapj" placeholder="Nama PenanggungJawab" class="form-control" id="namapj" style="margin-bottom: 10px;" value="<?= $pj['nama'] ?>">
+                                                <input type="text" name="namapj" readonly placeholder="Nama PenanggungJawab" class="form-control" id="namapj" style="margin-bottom: 10px;" value="<?= $pj['nama'] ?>">
                                             </div>
                                             <div class="position-relative form-group"><label>NIP</label>
-                                                <input type="text" name="nip" placeholder="NIP" class="form-control" id="nip" style="margin-bottom: 10px;" value="<?= $pj['nip'] ?>">
+                                                <input type="text" name="nip" readonly placeholder="NIP" class="form-control" id="nip" style="margin-bottom: 10px;" value="<?= $pj['nip'] ?>">
                                             </div>
                                             <div class="position-relative form-group"><label>Nama Satuan Kerja</label>
                                                 <input type="text" name="namaskpj" placeholder="Nama Satuan Kerja" class="form-control" id="namaskpj" style="margin-bottom: 10px;" value="<?= $pj['namaSK'] ?>">
@@ -493,7 +493,6 @@
                                             <?php endforeach; ?>
 
                                             <button type="button" name="add" id="add" class="btn btn-success mt-3">Add Other Version</button>
-                                            <button type="button" class="mb-0 mr-2 btn btn-info text-white mt-3" data-toggle="modal" data-target="#popupUpdateEdit">Update</button>
 
                                         </div>
                                     </div>
@@ -503,6 +502,7 @@
 
 
                             </div>
+                            <button type="button" class="mb-2 ml-3 btn btn-info text-white mt-3 shadow" data-toggle="modal" data-target="#popupUpdateEdit">Save Update</button>
                         </div>
                     </div>
                 </div>

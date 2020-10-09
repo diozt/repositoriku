@@ -59,13 +59,13 @@ class Auth extends CI_Controller
                 // masih belum fix
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
                     Password salah</div>');
-                $this->load->view('auth');
+                $this->load->view('auth/login');
             }
         } else {
             // masih belum fix
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-           akun tidak terdaftar</div>');
-            $this->load->view('auth');
+               akun tidak terdaftar</div>');
+            $this->load->view('auth/login');
         }
     }
 

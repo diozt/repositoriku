@@ -17,22 +17,11 @@ class User extends CI_Controller
         }
     }
 
-    public function index()
+
+    public function delete($id)
     {
-        #user Logged in
-
-        // print_r($this->M_list->counter());
-
-
-        $data["mostdownload"] = $this->M_list->counter();
-        $data["mostview"] = $this->M_list->counterview();
-        $data["files"] = $this->M_list->getAll(); // ambil data dari model
-        // echo count($data['files']);
-
-
-        $this->load->view("template/header", $data); // kirim data ke view
-        $this->load->view("admin/user", $data); // kirim data ke view
-        // // $this->load->view("template/footer", $data); // kirim data ke view
-
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+        redirect('admin/listuser');
     }
 }

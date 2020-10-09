@@ -117,6 +117,7 @@
                                             <!-- Id -->
                                             <td class="text-center text-muted">
                                                 <?= $i ?>
+
                                             </td>
 
                                             <!-- File Name -->
@@ -137,12 +138,8 @@
 
                                             </td>
                                             <td>
-                                                <a href="#" class="btn-shadow btn btn-danger  mb-2">
-                                                    <!-- <i class="pe pe-7s-plus pe-w-20"></i> -->
-                                                    <i class="pe-7s-delete-user mr-2"></i>
-                                                    Delete
-                                                </a>
 
+                                                <button class="mr-1 btn btn-danger btn-sm" onClick="deluser('<?= $users->id ?>')" data-toggle="modal" data-target="#popupRemove"><i class="pe-7s-delete-user mr-2"></i>Delete</button>
                                             </td>
                                         </tr>
 
@@ -180,7 +177,38 @@
 </div>
 
 <!--  Modal -->
+<div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure to delete this user?
+            </div>
+            <script>
+                var iduser = "";
 
+                function deluser(id) {
+                    iduser = id;
+                }
+            </script>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" onclick="confirm()" class="btn btn-danger">Yes</button>
+                <script>
+                    function confirm() {
+
+                        window.location.href = "<?= base_url('User/delete/') ?>" + iduser;
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
 

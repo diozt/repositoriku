@@ -443,7 +443,7 @@ class admin extends CI_Controller
 
         //untuk tabel plpendukung
         $plp['id'] = $id;
-        $plp['jenispl'] = $this->input->post('jenisplp');
+        $plp['jenispl'] = $this->input->post('jenispl');
         $plp['deskripsi'] = $this->input->post('deskripsi');
 
         //untuk tabel tenagaahli
@@ -620,6 +620,7 @@ class admin extends CI_Controller
         $du['sop'] = $id;
         $du['penanggungjawab'] = $pj['nip'];
         $du['helpdesk'] = $id;
+
 
 
         // UPLOAD table selain file upload

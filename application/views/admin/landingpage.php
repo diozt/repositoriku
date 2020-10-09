@@ -276,7 +276,7 @@
                                                         <?php $parameter = array($file->id, $file->nama) ?>
                                                         <a href="<?php echo base_url() . "admin/detail/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>" class="mr-1 btn btn-primary btn-sm"><i class="fa pe-7s-note2 fa-w-10"></i> Details</a>
                                                         <a class="mr-1 btn-shadow btn btn-info btn-sm" href="<?php echo base_url() . "admin/edit/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab ?>"><i class="fa pe-7s-edit fa-w-10"></i> Edit</a>
-                                                        <button class="mr-1 btn btn-danger btn-sm" data-toggle="modal" data-target="#popupRemove"><i class="fa pe-7s-trash fa-w-10"></i> Remove</button>
+                                                        <button class="mr-1 btn btn-danger btn-sm" onClick="cc('<?= $file->id ?>','<?= $file->nama ?>',' <?= $file->penanggungjawab ?>')" id="showPopup<?= $file->id ?>" data-toggle="modal" data-target="#popupRemove"><i class="fa pe-7s-trash fa-w-10"></i> Remove</button>
                                                     </td>
                                                 </tr>
 
@@ -326,28 +326,46 @@
         </div>
 
         <!--  Modal -->
-        <?php foreach ($files as $file) : ?>
-            <div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            Are you sure to delete this?
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <a href="<?php echo base_url() . "admin/delete/" . $file->id . '/' . $file->nama . '/' . $file->penanggungjawab  ?>" class="btn btn-danger">Yes</a>
-                            <!-- <a href="<?php echo base_url() . "admin/recursiveRmDir" ?>" class="btn btn-danger">Yes</a> -->
-                        </div>
+
+        <div class="modal" tabindex="1000" id="popupRemove" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure to delete this?
+                    </div>
+                    <script>
+                        // var show_btn = $('#showPopup<?= $file->id ?>');
+
+                        var idku = "";
+                        var nama = "";
+                        var pjawab = "";
+
+                        function cc(id, nm, pj) {
+                            idku = id;
+                            nama = nm;
+                            pjawab = pj;
+
+                        }
+                    </script>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" onclick="ll()" class="btn btn-danger">Yes</button>
+                        <script>
+                            function ll() {
+                                window.location.href = "<?= base_url('admin/delete/') ?>" + idku + "/" + nama + "/" + pjawab;
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        </div>
+
 
         <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
 
