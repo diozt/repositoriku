@@ -26,6 +26,7 @@ class admin extends CI_Controller
         #user Logged in
         $data["mostdownload"] = $this->M_list->counter();
         $data["mostview"] = $this->M_list->counterview();
+        $data["jmlall"] = $this->M_list->counterfile();
         $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
@@ -292,7 +293,7 @@ class admin extends CI_Controller
 
         $data["mostdownload"] = $this->M_list->counter();
         $data["mostview"] = $this->M_list->counterview();
-
+        $data["jmlall"] = $this->M_list->counterfile();
         // $data["files"] = $this->M_list->getAll(); // ambil data dari model
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
@@ -312,6 +313,7 @@ class admin extends CI_Controller
             $this->db->from('plutama');
             $this->db->where('jenispl', $jenispl);
             $idjnspl = $this->db->get()->result();
+
             $id1 = [];
             foreach ($idjnspl as $x) :
                 array_push($id1, $x->id);
@@ -320,7 +322,6 @@ class admin extends CI_Controller
             $this->db->select('id');
             $this->db->from('jenislayanan');
             $this->db->where('jenis', $jnslayanan);
-
             $idjnsly = $this->db->get()->result();
 
             $id2 = [];
@@ -328,11 +329,16 @@ class admin extends CI_Controller
                 array_push($id2, $x->id);
             endforeach;
 
+            //misal ada id doble yang terpilih dijadikan satu
             $id = array_unique(array_merge($id1, $id2));
 
             if ($id != null) {
                 $this->db->where_in('id', $id);
+            } else {
+                $this->db->where_in('id', "");
             }
+
+            #########################################################
 
             if ($from != null || $to != null) {
                 date_default_timezone_set('Asia/Jakarta');
@@ -346,14 +352,14 @@ class admin extends CI_Controller
                 $to = strtotime($to);
                 $to = date('Y-m-d 23:59:59', $to);
 
+
                 $this->db->where('tglentri >=', $from);
                 $this->db->where('tglentri <=', $to);
             }
             $this->db->order_by('tglentri', 'desc');
-
-
             $query = $this->db->get('dataumum');
             $data['files'] = $query->result();
+            // print_r($data['files']);
         } else {
             $this->db->order_by('tglentri', 'desc');
             $query = $this->db->get('dataumum');
@@ -361,6 +367,9 @@ class admin extends CI_Controller
         }
 
         // // $data["files"] = $this->M_list->getAll(); // ambil data dari model
+        $data["mostdownload"] = $this->M_list->counter();
+        $data["mostview"] = $this->M_list->counterview();
+        $data["jmlall"] = $this->M_list->counterfile();
         $data["admin"] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view("admin/landingpage", $data); // kirim data ke view
@@ -443,7 +452,7 @@ class admin extends CI_Controller
 
         //untuk tabel plpendukung
         $plp['id'] = $id;
-        $plp['jenispl'] = $this->input->post('jenispl');
+        $plp['jenispl'] = $this->input->post('jenisplp');
         $plp['deskripsi'] = $this->input->post('deskripsi');
 
         //untuk tabel tenagaahli

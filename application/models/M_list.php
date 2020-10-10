@@ -23,12 +23,16 @@ class M_list extends CI_Model
     {
 
         // $this->db->select_max('download');
-        return $this->db->query('select * from dataumum where download in( SELECT MAX(download) FROM dataumum )')->row();
+        return $this->db->query('SELECT * from dataumum where download in( SELECT MAX(download) FROM dataumum )')->row();
     }
     public function counterview()
     {
 
         // $this->db->select_max('download');
-        return $this->db->query('select * from dataumum where view in( SELECT MAX(view) FROM dataumum )')->row();
+        return $this->db->query('SELECT * from dataumum where view in( SELECT MAX(view) FROM dataumum )')->row();
+    }
+    public function counterfile()
+    {
+        return $this->db->from("dataumum")->count_all_results();
     }
 }

@@ -337,7 +337,7 @@
                                             <hr>
                                             <h2 class="card-title mb-3 mt-4">Software Pendukung</h2>
                                             <div class="position-relative form-group"><label>Jenis Software Pendukung</label>
-                                                <input type="text" name="jenispl" placeholder="Jenis Perangkat Lunak" class="form-control" id="jenispl" style="margin-bottom: 10px;" value="<?= $plp['jenispl'] ?>">
+                                                <input type="text" name="jenisplp" placeholder="Jenis Perangkat Lunak" class="form-control" id="jenispl" style="margin-bottom: 10px;" value="<?= $plp['jenispl'] ?>">
                                             </div>
                                             <div class="position-relative form-group"><label>Deskripsi</label>
                                                 <textarea name="deskripsi" placeholder="Deskripsi" class="form-control" id="deskripsi" style="margin-bottom: 10px;"><?= $plp['deskripsi'] ?></textarea>

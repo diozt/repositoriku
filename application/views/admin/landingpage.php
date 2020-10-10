@@ -194,7 +194,7 @@
                                                 <class class="widget-subheading">there are</class>
                                             </div>
                                             <div class="widget-content-right text-center">
-                                                <div class="widget-numbers text-warning"><?= count($files) ?></div>
+                                                <div class="widget-numbers text-warning"><?= $jmlall ?></div>
                                                 <div class="widget-subheading text-muted">
                                                     <p class="mb-0 text-muted">uploaded</p>
                                                 </div>
