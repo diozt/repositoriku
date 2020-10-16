@@ -117,10 +117,14 @@
                     <div class="main-card mb-3 card">
                         <div class="card-header">Detail Aplikasi
                             <div class="btn-actions-pane-right">
-                                <!-- <div role="group" class="btn-group-sm btn-group">
-                                                    <button class="active btn btn-focus">Last Week</button>
-                                                    <button class="btn btn-focus">All Month</button>
-                                                </div>########## -->
+                                <button class="btn-transition btn btn-outline-link disabled">
+                                    <i class="">
+                                        Diunggah pada: 11 Agustus 2020 10:11:12 WIB
+                                    </i>
+                                </button>
+                                <!-- <div class="text-muted opacity-8 pl-1">
+                                    Diunggah pada: <i>PHP tanggal</i>
+                                </div> -->
                             </div>
                         </div>
 
@@ -686,7 +690,13 @@
                                                                     <div class="widget-subheading"><?= $du['nama'] ?></div>
                                                                 </div>
                                                                 <div class="widget-content-right">
-
+                                                                    <span class="mr-6">
+                                                                        <button class="btn-transition btn btn-outline-link disabled">
+                                                                            <i class="">
+                                                                                Diunggah pada: 11 Agustus 2020 10:11:12 WIB
+                                                                            </i>
+                                                                        </button>
+                                                                    </span>
                                                                     <button class="mb-0 mr-2 btn btn-sm btn-icon btn-danger" data-toggle="modal" data-target="#popupRemoveversi">
                                                                         <i class="pe-7s-trash btn-icon-wrapper"> </i>
                                                                         Remove

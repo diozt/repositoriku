@@ -137,6 +137,32 @@
                                             <div class="position-relative form-group"><label>Alamat URL Sistem Elektronik</label>
                                                 <input type="text" name="url" placeholder="Alamat URL" class="form-control" id="namaSE" style="margin-bottom: 15px;" class=" form-control" value="<?= $du['url'] ?>">
                                             </div>
+                                            <div class="position-relative form-group"><label>Jenis/Pengguna Layanan</label> <select class="form-control" name="pg????" style="margin-bottom: 10px;">
+                                                    <option hidden>Pilih</option>
+                                                    <option <?//php if ($du['???']=="Publik" ) echo "selected" ; ?>>Publik</option>
+                                                    <option <?//php if ($du['???']=="Pemerintah" ) echo "selected" ; ?>>Pemerintah</option>
+                                                </select>
+                                            </div>
+                                            <div class="position-relative form-group"><label>Level</label> <select class="form-control" name="level???" style="margin-bottom: 10px;">
+                                                    <option hidden>Pilih</option>
+                                                    <option <?//php if ($du['???']=="Informasi" ) echo "selected" ; ?>>Informasi</option>
+                                                    <option <?//php if ($du['???']=="Transaksi" ) echo "selected" ; ?>>Transaksi</option>
+                                                    <option <?//php if ($du['???']=="Interaksi" ) echo "selected" ; ?>>Interaksi</option>
+                                                    <option <?//php if ($du['???']=="Kolaborasi" ) echo "selected" ; ?>>Kolaborasi</option>
+                                                    <option <?//php if ($du['???']=="Optimalisasi" ) echo "selected" ; ?>>Optimalisasi</option>
+                                                </select>
+                                            </div>
+                                            <div class="position-relative form-group"><label>Budget</label>
+                                                <input type="text" name="bud???" placeholder="Budget" class="form-control" id="budget" style="margin-bottom: 15px;" class=" form-control" value="PHP BUDGET">
+                                            </div>
+                                            <div class="position-relative form-group"><label>Status</label> <select class="form-control" name="status???" style="margin-bottom: 10px;">
+                                                    <option hidden>Pilih</option>
+                                                    <option <?//php if ($du['???']=="Publish" ) echo "selected" ; ?>>Publish</option>
+                                                    <option <?//php if ($du['???']=="Unpublish" ) echo "selected" ; ?>>Unpublish</option>
+                                                    <option <?//php if ($du['???']=="Versi Baru" ) echo "selected" ; ?>>Versi Baru</option>
+                                                    <option <?//php if ($du['???']=="Pengembangan" ) echo "selected" ; ?>>Pengembangan</option>
+                                                </select>
+                                            </div>
                                             <hr>
 
                                             <h2 class="card-title mb-3 mt-3">Fungsi Yang Dimiliki</h2>
@@ -270,8 +296,21 @@
                                     <div class="main-card card">
                                         <div class="card-body">
                                             <h2 class="card-title mb-3 mt-4">Hardware Utama</h2>
+                                            <div class="position-relative form-group"><label>Jenis Hardware</label> <select class="form-control" name="jenispk???" style="margin-bottom: 10px;">
+                                                    <option hidden>Pilih</option>
+                                                    <option <?//php if ($du['???']=="PC" ) echo "selected" ; ?>>PC</option>
+                                                    <option <?//php if ($du['???']=="Server" ) echo "selected" ; ?>>Server</option>
+                                                    <option <?//php if ($du['???']=="Lainnya" ) echo "selected" ; ?>>Lainnya</option>
+                                                </select>
+                                            </div>
                                             <div class="position-relative form-group"><label>Jenis Hardware</label>
                                                 <input type="text" name="jenispku" placeholder="Jenis" class="form-control" id="jenispku" style="margin-bottom: 10px;" value="<?= $pku['jenispk'] ?>">
+                                            </div>
+                                            <div class="position-relative form-group"><label>Pemilik</label> <select class="form-control" name="pemilik???" style="margin-bottom: 10px;">
+                                                    <option hidden>Pilih</option>
+                                                    <option <?//php if ($du['???']=="Milik Sendiri" ) echo "selected" ; ?>>Milik Sendiri</option>
+                                                    <option <?//php if ($du['???']=="Sewa" ) echo "selected" ; ?>>Sewa</option>
+                                                </select>
                                             </div>
                                             <div class="position-relative form-group"><label>Pemilik</label>
                                                 <input type="text" name="pemilikpku" placeholder="Pemilik" class="form-control" id="pemilikpku" style="margin-bottom: 10px;" value="<?= $pku['pemilik'] ?>">
@@ -329,6 +368,7 @@
                                                     <option <?php if ($plu['jenispl'] == "Apk Desktop") echo "selected"; ?>>Apk Desktop</option>
                                                     <option <?php if ($plu['jenispl'] == "Apk Client/Server") echo "selected"; ?>>Apk Client/Server</option>
                                                     <option <?php if ($plu['jenispl'] == "Apk Web") echo "selected"; ?>>Apk Web</option>
+                                                    <option <?php if ($plu['jenispl'] == "Lainnya") echo "selected"; ?>>Lainnya</option>
                                                     <!-- <option>Jenis Layanan Lainnya</option> -->
                                                 </select></div>
                                             <div class="position-relative form-group"><label>Penyedia Software</label>
@@ -352,6 +392,20 @@
                                 <div class="col-md-10">
                                     <div class="main-card card">
                                         <div class="card-body">
+                                            <h2 class="card-title mb-3 mt-4">Pengembang</h2>
+                                            <div class="position-relative form-group"><label>Nama Pengembang</label>
+                                                <input type="text" name="nama???" placeholder="Nama Pengembang" class="form-control" id="jenis" style="margin-bottom: 10px;" value="PHP Nama">
+                                            </div>
+                                            <div class="position-relative form-group"><label>Nomor HP</label>
+                                                <input type="text" name="nohp???" placeholder="Nomor HP" class="form-control" id="jml" style="margin-bottom: 10px;" value="PHP NOHP">
+                                            </div>
+                                            <div class="position-relative form-group"><label>OPD</label>
+                                                <input type="text" name="opd???" placeholder="OPD" class="form-control" id="kompetensi" style="margin-bottom: 10px;" value="PHP OPD">
+                                            </div>
+                                            <div class="position-relative form-group"><label>Alamat</label>
+                                                <input type="text" name="alamat???" placeholder="Alamat" class="form-control" id="kompetensi" style="margin-bottom: 10px;" value="PHP Alamat">
+                                            </div>
+                                            <hr>
                                             <h2 class="card-title mb-3 mt-4">Tenaga Ahli Yang dibutuhkan</h2>
                                             <div class="position-relative form-group"><label>Jenis Tenaga Ahli</label>
                                                 <input type="text" name="jenis" placeholder="Jenis" class="form-control" id="jenis" style="margin-bottom: 10px;" value="<?= $ta['jenis'] ?>">
