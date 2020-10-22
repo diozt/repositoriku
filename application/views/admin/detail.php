@@ -100,12 +100,12 @@
                                 Edit
                             </a>
 
-                            <a class="mb-2 mr-2 btn-shadow btn btn-alternate" href="<?php echo base_url() . "admin/download/" . $informasi->nama ?>">
+                            <button type="button" class="mb-2 mr-2 btn-shadow btn btn-alternate" onclick="godownload('<?= $informasi->id ?>','<?= $informasi->nama ?>')">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-download fa-w-10"></i>
                                 </span>
                                 Download
-                            </a>
+                            </button>
 
                         </div>
                     </div>
@@ -726,10 +726,21 @@
                                                                         Remove
                                                                     </button>
 
-                                                                    <a class="mb-0 mr-2 btn btn-sm btn-icon btn-alternate pull-right" href="<?php echo base_url() . "admin/downloadversi/" . $informasi->nama . '/' . $file['versi'] ?>">
+                                                                    <button type="button" class="mb-0 mr-2 btn btn-sm btn-icon btn-alternate pull-right" onclick="godownloadversi('<?= $informasi->nama ?>','<?= $file['versi'] ?>')">
+
                                                                         <i class="fa pe-7s-download fa-w-10"></i>
                                                                         Download
-                                                                    </a>
+                                                                    </button>
+                                                                    <script>
+                                                                        function godownloadversi(nama, versi) {
+                                                                            window.location.href = "<?php echo base_url() . "admin/downloadversi/" ?>" + nama + "/" + versi;
+                                                                        };
+
+                                                                        function godownload(id, nama) {
+                                                                            window.location.href = "<?php echo base_url() . "admin/countdownload/" ?>" + id + "/" + nama;
+
+                                                                        };
+                                                                    </script>
                                                                 </div>
                                                             </div>
                                                         </div>

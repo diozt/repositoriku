@@ -147,7 +147,7 @@ class admin extends CI_Controller
         }
     }
 
-    public function download($folder)
+    public function download($id, $folder)
     {
         // %20 to space
         $folder = urldecode($folder);
@@ -164,6 +164,7 @@ class admin extends CI_Controller
 
         // Download
         $this->zip->download($filename);
+        redirect('admin/detail/' . $id . '/' . $folder, 'refresh');
     }
 
     public function downloadversi($folder, $versi)
@@ -666,5 +667,29 @@ class admin extends CI_Controller
             // jika dari halaman edit
             redirect('admin/edit/' . $id . '/' . $folder . '/' . $pj, 'refresh');
         }
+    }
+    public function countview($id, $nama)
+    {
+        $view = $this->db->get_where('dataumum', ['id' => $id])->row_array();
+        $count = $view['view'] + 1;
+        $updateview = array('view' => $count);
+        $this->db->where('id', $id);
+        $this->db->update('dataumum', $updateview);
+        redirect('admin/detail/' . $id . '/' . $nama, 'refresh');
+    }
+
+    public function countdownload($id, $nama)
+    {
+        $view = $this->db->get_where('dataumum', ['id' => $id])->row_array();
+        $count = $view['download'] + 1;
+        $updatedownload = array('download' => $count);
+        $this->db->where('id', $id);
+        $this->db->update('dataumum', $updatedownload);
+        // $this->download($nama);
+        redirect('admin/download/' . $id . '/' . $nama);
+
+
+        // // redirect('admin/detail/' . $id . '/' . $nama, 'refresh');
+        // echo $view['download'] + 1;
     }
 };
