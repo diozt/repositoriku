@@ -53,10 +53,10 @@ class Upload extends CI_Controller
         $sertif['nosertif'] = $this->input->post('nosertif');
         $sertif['ruanglingkup'] = $this->input->post('lingkupsertif');
 
-        //untuk tabel pengguna layanan
-        $pl['id'] = $id;
-        $pl['jenisPengguna'] = $this->input->post('jenispengguna');
-        $pl['keterangan'] = $this->input->post('ketjenis');
+        // //untuk tabel pengguna layanan
+        // $pl['id'] = $id;
+        // $pl['jenisPengguna'] = $this->input->post('jenispengguna');
+        // $pl['keterangan'] = $this->input->post('ketjenis');
 
         //untuk tabel penyelenggara
         $plg['id'] = $id;
@@ -100,9 +100,12 @@ class Upload extends CI_Controller
 
         //untuk tabel tenagaahli
         $ta['id'] = $id;
-        $ta['jenis'] = $this->input->post('jenis');
-        $ta['jumlah'] = $this->input->post('jml');
+        $ta['nama'] = $this->input->post('namata');
+        $ta['jenis'] = $this->input->post('jenista');
         $ta['kompetensi'] = $this->input->post('kompetensi');
+        $ta['nohp'] = $this->input->post('nohpta');
+        $ta['opd'] = $this->input->post('opd');
+        $ta['alamat'] = $this->input->post('alamatta');
 
         //untuk tabel ketersediaanta
         $kta['id'] = $id;
@@ -123,6 +126,7 @@ class Upload extends CI_Controller
         $sop['keterangan'] = $this->input->post('ketsop');
 
         //untuk tabel penanggungjawab
+        $pj['id'] = $id;
         $pj['nama'] = $this->input->post('namapj');
         $pj['nip'] = $this->input->post('nip');
         $pj['namaSK'] = $this->input->post('namaskpj');
@@ -253,7 +257,10 @@ class Upload extends CI_Controller
         $du['sistempengaman'] = $id;
         $du['sistemterkait'] = $id;
         $du['sertifikasi'] = $id;
-        $du['penggunalayanan'] = $id;
+        $du['penggunalayanan'] = $this->input->post('jenispengguna');;
+        $du['level'] = $this->input->post('level');;
+        $du['budget'] = $this->input->post('budget');;
+        $du['status'] = $this->input->post('status');;
         $du['penyelenggara'] = $id;
         $du['pkutama'] = $id;
         $du['pkkhusus'] = $id;
@@ -263,12 +270,12 @@ class Upload extends CI_Controller
         $du['ketersediaanta'] = $id;
         $du['dasarhukum'] = $id;
         $du['sop'] = $id;
-        $du['penanggungjawab'] = $pj['nip'];
+        $du['penanggungjawab'] = $id;
         $du['helpdesk'] = $id;
 
 
         // UPLOAD table selain file upload
-        $this->m_upload->save1($fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd);
+        $this->m_upload->save1($fu, $jl, $sp, $st, $sertif, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd);
 
         // upload table data umum
         $this->m_upload->save3($du);

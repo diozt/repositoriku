@@ -44,7 +44,7 @@ class admin extends CI_Controller
     }
 
 
-    public function detail($id, $nama, $pj)
+    public function detail($id, $nama)
     {
         // %20 to space
         $nama = urldecode($nama);
@@ -69,14 +69,13 @@ class admin extends CI_Controller
         $data["kta"] = $this->db->get_where('ketersediaanta', ['id' => $id])->row_array();
         $data["dh"] = $this->db->get_where('dasarhukum', ['id' => $id])->row_array();
         $data["sop"] = $this->db->get_where('sop', ['id' => $id])->row_array();
-        $data["pj"] = $this->db->get_where('penanggungjawab', ['nip' => $pj])->row_array();
+        $data["pj"] = $this->db->get_where('penanggungjawab', ['id' => $id])->row_array();
         $data["hd"] = $this->db->get_where('helpdesk', ['id' => $id])->row_array();
         $this->load->view("template/header", $data); // kirim data ke view
         $this->load->view('admin/detail', $data);
-        // $this->load->view("template/footer", $data); // kirim data ke view
     }
 
-    public function edit($id, $nama, $pj)
+    public function edit($id, $nama)
     {
         // %20 to space
         $nama = urldecode($nama);
@@ -102,7 +101,7 @@ class admin extends CI_Controller
         $data["kta"] = $this->db->get_where('ketersediaanta', ['id' => $id])->row_array();
         $data["dh"] = $this->db->get_where('dasarhukum', ['id' => $id])->row_array();
         $data["sop"] = $this->db->get_where('sop', ['id' => $id])->row_array();
-        $data["pj"] = $this->db->get_where('penanggungjawab', ['nip' => $pj])->row_array();
+        $data["pj"] = $this->db->get_where('penanggungjawab', ['id' => $id])->row_array();
         $data["hd"] = $this->db->get_where('helpdesk', ['id' => $id])->row_array();
         // print_r($data["jl"]);
 
@@ -204,7 +203,6 @@ class admin extends CI_Controller
 
     public function delete($id, $nama, $pj)
     {
-
         // %20 to space
         $nama = urldecode($nama);
 
@@ -221,7 +219,7 @@ class admin extends CI_Controller
         $this->db->delete('jenislayanan');
         $this->db->where('id', $id);
         $this->db->delete('ketersediaanta');
-        $this->db->where('nip', $pj);
+        $this->db->where('id', $id);
         $this->db->delete('penanggungjawab');
         $this->db->where('id', $id);
         $this->db->delete('penggunalayanan');
@@ -410,10 +408,10 @@ class admin extends CI_Controller
         $sertif['nosertif'] = $this->input->post('nosertif');
         $sertif['ruanglingkup'] = $this->input->post('lingkupsertif');
 
-        //untuk tabel pengguna layanan
-        $pl['id'] = $id;
-        $pl['jenisPengguna'] = $this->input->post('jenispengguna');
-        $pl['keterangan'] = $this->input->post('ketjenis');
+        // //untuk tabel pengguna layanan
+        // $pl['id'] = $id;
+        // $pl['jenisPengguna'] = $this->input->post('jnspengguna');
+        // $pl['keterangan'] = $this->input->post('ketjenis');
 
         //untuk tabel penyelenggara
         $plg['id'] = $id;
@@ -457,9 +455,12 @@ class admin extends CI_Controller
 
         //untuk tabel tenagaahli
         $ta['id'] = $id;
-        $ta['jenis'] = $this->input->post('jenis');
-        $ta['jumlah'] = $this->input->post('jml');
+        $ta['nama'] = $this->input->post('namata');
+        $ta['jenis'] = $this->input->post('jenista');
         $ta['kompetensi'] = $this->input->post('kompetensi');
+        $ta['nohp'] = $this->input->post('nohpta');
+        $ta['opd'] = $this->input->post('opd');
+        $ta['alamat'] = $this->input->post('alamatta');
 
         //untuk tabel ketersediaanta
         $kta['id'] = $id;
@@ -480,6 +481,7 @@ class admin extends CI_Controller
         $sop['keterangan'] = $this->input->post('ketsop');
 
         //untuk tabel penanggungjawab
+        $pj['id'] = $id;
         $pj['nama'] = $this->input->post('namapj');
         $pj['nip'] = $this->input->post('nip');
         $pj['namaSK'] = $this->input->post('namaskpj');
@@ -617,7 +619,10 @@ class admin extends CI_Controller
         $du['sistempengaman'] = $id;
         $du['sistemterkait'] = $id;
         $du['sertifikasi'] = $id;
-        $du['penggunalayanan'] = $id;
+        $du['penggunalayanan'] = $this->input->post('jnspengguna');
+        $du['level'] = $this->input->post('level');
+        $du['budget'] = $this->input->post('budget');
+        $du['status'] = $this->input->post('status');
         $du['penyelenggara'] = $id;
         $du['pkutama'] = $id;
         $du['pkkhusus'] = $id;
@@ -627,13 +632,13 @@ class admin extends CI_Controller
         $du['ketersediaanta'] = $id;
         $du['dasarhukum'] = $id;
         $du['sop'] = $id;
-        $du['penanggungjawab'] = $pj['nip'];
+        $du['penanggungjawab'] = $id;
         $du['helpdesk'] = $id;
 
 
 
         // UPLOAD table selain file upload
-        $this->M_upload->update1($fup, $du, $fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd);
+        $this->M_upload->update1($fup, $du, $fu, $jl, $sp, $st, $sertif, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd);
 
         // upload table data umum
         $this->M_upload->update2($du);

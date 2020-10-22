@@ -93,7 +93,7 @@
                                 Remove
                             </button>
 
-                            <a class="mb-2 mr-2 btn-shadow btn btn-info" href="<?php echo base_url() . "admin/edit/" . $informasi->id . '/' . $informasi->nama . '/' . $informasi->penanggungjawab ?>">
+                            <a class="mb-2 mr-2 btn-shadow btn btn-info" href="<?php echo base_url() . "admin/edit/" . $informasi->id . '/' . $informasi->nama ?>">
                                 <span class="btn-icon-wrapper pr-2 opacity-7">
                                     <i class="fa pe-7s-edit fa-w-10"></i>
                                 </span>
@@ -119,7 +119,9 @@
                             <div class="btn-actions-pane-right">
                                 <button class="btn-transition btn btn-outline-link disabled">
                                     <i class="">
-                                        Diunggah pada: 11 Agustus 2020 10:11:12 WIB
+                                        Diunggah pada: <?php
+                                                        date_default_timezone_set('Asia/Jakarta');
+                                                        echo date('d F Y H:i:s', strtotime($informasi->tglentri)) ?> WIB
                                     </i>
                                 </button>
                                 <!-- <div class="text-muted opacity-8 pl-1">
@@ -323,16 +325,24 @@
                                                             </tr>
                                                             <tr>
                                                                 <td colspan="2">
-                                                                    <h5 class="card-title mt-3 mt-1 text-primary">Penguna Layanan Sistem Elektronik</h5>
+                                                                    <h5 class="card-title mt-4 mb-1 text-primary">Keterangan Lainnya</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Jenis Pengguna</td>
-                                                                <td>: <?= $pl['jenisPengguna'] ?></td>
+                                                                <td>: <?= $du['penggunalayanan'] ?></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Keterangan</td>
-                                                                <td>: <?= $pl['keterangan'] ?></td>
+                                                                <td>Level</td>
+                                                                <td>: <?= $du['level'] ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Budget</td>
+                                                                <td>: <?= $du['budget'] ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Status</td>
+                                                                <td>: <?= $du['status'] ?></td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -536,20 +546,32 @@
                                                         <tbody>
                                                             <tr>
                                                                 <td colspan="2">
-                                                                    <h5 class="card-title mt-0 mb-1 text-primary">Tenaga Ahli Yang Dibutuhkan</h5>
+                                                                    <h5 class="card-title mt-0 mb-1 text-primary">Tenaga Ahli (Pengembang)</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Jenis Tenaga Ahli</td>
-                                                                <td>: <?= $ta['jenis'] ?></td>
+                                                                <td>Nama</td>
+                                                                <td>: <?= $ta['nama'] ?></td>
                                                             </tr>
                                                             <tr>
-                                                                <td>Jumlah</td>
-                                                                <td>: <?= $ta['jumlah'] ?></td>
+                                                                <td>jenis</td>
+                                                                <td>: <?= $ta['jenis'] ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Kompetensi</td>
                                                                 <td>: <?= $ta['kompetensi'] ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Nomor HP</td>
+                                                                <td>: <?= $ta['nohp'] ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPD</td>
+                                                                <td>: <?= $ta['opd'] ?></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Alamat</td>
+                                                                <td>: <?= $ta['alamat'] ?></td>
                                                             </tr>
                                                             <tr>
                                                                 <td colspan="2">
@@ -693,7 +715,9 @@
                                                                     <span class="mr-6">
                                                                         <button class="btn-transition btn btn-outline-link disabled">
                                                                             <i class="">
-                                                                                Diunggah pada: 11 Agustus 2020 10:11:12 WIB
+                                                                                Diunggah pada: <?php
+                                                                                                date_default_timezone_set('Asia/Jakarta');
+                                                                                                echo date('d F Y H:i:s', strtotime($file['tglupload'])) ?> WIB
                                                                             </i>
                                                                         </button>
                                                                     </span>
@@ -803,6 +827,8 @@
 
 
 <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/main.js"></script>
+
+
 
 
 </body>

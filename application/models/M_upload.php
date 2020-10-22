@@ -3,14 +3,14 @@ class M_upload extends CI_Model
 {
 
 
-    function save1($fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd)
+    function save1($fu, $jl, $sp, $st, $sertif, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd)
     {
         $this->db->insert('fungsiutama', $fu);
         $this->db->insert('jenislayanan', $jl);
         $this->db->insert('sistempengaman', $sp);
         $this->db->insert('sistemterkait', $st);
         $this->db->insert('sertifikasi', $sertif);
-        $this->db->insert('penggunalayanan', $pl);
+        // $this->db->insert('penggunalayanan', $pl);
         $this->db->insert('penyelenggara', $plg);
         $this->db->insert('pkutama', $pku);
         $this->db->insert('pkkhusus', $pkk);
@@ -46,7 +46,7 @@ class M_upload extends CI_Model
         return $this->db->insert('dataumum', $du);
     }
 
-    function update1($fup, $du, $fu, $jl, $sp, $st, $sertif, $pl, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd)
+    function update1($fup, $du, $fu, $jl, $sp, $st, $sertif, $plg, $pku, $pkk, $plu, $plp, $ta, $kta, $dh, $sop, $pj, $hd)
     {
 
 
@@ -64,8 +64,8 @@ class M_upload extends CI_Model
         $this->db->update('sistemterkait', $st);
         $this->db->where('id', $sertif['id']);
         $this->db->update('sertifikasi', $sertif);
-        $this->db->where('id', $pl['id']);
-        $this->db->update('penggunalayanan', $pl);
+        // $this->db->where('id', $pl['id']);
+        // $this->db->update('penggunalayanan', $pl);
         $this->db->where('id', $plg['id']);
         $this->db->update('penyelenggara', $plg);
         $this->db->where('id', $pku['id']);
@@ -84,7 +84,7 @@ class M_upload extends CI_Model
         $this->db->update('dasarhukum', $dh);
         $this->db->where('id', $sop['id']);
         $this->db->update('sop', $sop);
-        $this->db->where('nip', $pj['nip']);
+        $this->db->where('id', $pj['id']);
         $this->db->update('penanggungjawab', $pj);
         $this->db->where('id', $hd['id']);
         $this->db->update('helpdesk', $hd);

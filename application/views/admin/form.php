@@ -141,13 +141,13 @@
                                                    <div class="position-relative form-group"><label>Alamat URL Sistem Elektronik</label>
                                                        <input type="text" name="url" placeholder="Alamat URL" class="form-control" id="namaSE" style="margin-bottom: 15px;" class=" form-control">
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Jenis/Pengguna Layanan</label> <select class="form-control" name="pg????" style="margin-bottom: 10px;">
+                                                   <div class="position-relative form-group"><label>Jenis/Pengguna Layanan</label> <select class="form-control" name="jenispengguna" style="margin-bottom: 10px;">
                                                            <option hidden>Pilih</option>
                                                            <option>Publik</option>
                                                            <option>Pemerintah</option>
                                                        </select>
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Level</label> <select class="form-control" name="level???" style="margin-bottom: 10px;">
+                                                   <div class="position-relative form-group"><label>Level</label> <select class="form-control" name="level" style="margin-bottom: 10px;">
                                                            <option hidden>Pilih</option>
                                                            <option>Informasi</option>
                                                            <option>Transaksi</option>
@@ -156,10 +156,16 @@
                                                            <option>Optimalisasi</option>
                                                        </select>
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Budget</label>
-                                                       <input type="text" name="bud???" placeholder="Budget" class="form-control" id="budget" style="margin-bottom: 15px;" class=" form-control">
+
+                                                   <label for="basic-url">Budget</label>
+                                                   <div class="input-group mb-3">
+                                                       <div class="input-group-prepend">
+                                                           <span class="input-group-text" id="basic-addon3">Rp.</span>
+                                                       </div>
+                                                       <input type="text" onkeyup="convertToRupiah(this);" name="budget" placeholder="Budget" class="form-control" id="budget" class=" form-control">
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Status</label> <select class="form-control" name="status???" style="margin-bottom: 10px;">
+
+                                                   <div class="position-relative form-group"><label>Status</label> <select class="form-control" name="status" style="margin-bottom: 10px;">
                                                            <option hidden>Pilih</option>
                                                            <option>Publish</option>
                                                            <option>Unpublish</option>
@@ -252,14 +258,14 @@
                                                    <div class="position-relative form-group"><label>Ruang Lingkup Sertifikat</label>
                                                        <input type="text" name="lingkupsertif" placeholder="Ruang Lingkup" class="form-control" id="lingkupsertif" style="margin-bottom: 10px;">
                                                    </div>
-                                                   <hr>
+                                                   <!-- <hr>
                                                    <h2 class="card-title mb-3 mt-3">Pengguna Layanan</h2>
                                                    <div class="position-relative form-group"><label>Pengguna Layanan Sistem Elektronik</label>
                                                        <input type="text" name="jenispengguna" placeholder="Jenis Pengguna" class="form-control" id="jenispengguna" style="margin-bottom: 10px;">
                                                    </div>
                                                    <div class="position-relative form-group"><label>Keterangan</label>
                                                        <textarea name="ketjenis" placeholder="Keterangan" class="form-control" id="ketjenis"></textarea>
-                                                   </div>
+                                                   </div> -->
                                                </div>
                                            </div>
                                        </div>
@@ -303,25 +309,20 @@
                                            <div class="main-card card">
                                                <div class="card-body">
                                                    <h2 class="card-title mb-3 mt-4">Hardware Utama</h2>
-                                                   <div class="position-relative form-group"><label>Jenis Hardware</label> <select class="form-control" name="hardware???" style="margin-bottom: 10px;">
+                                                   <div class="position-relative form-group"><label>Jenis Hardware</label> <select class="form-control" name="jenispku" style="margin-bottom: 10px;">
                                                            <option hidden>Pilih</option>
                                                            <option>PC</option>
                                                            <option>Server</option>
                                                            <option>Lainnya</option>
                                                        </select>
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Jenis Hardware</label>
-                                                       <input type="text" name="jenispku" placeholder="Jenis" class="form-control" id="jenispku" style="margin-bottom: 10px;">
-                                                   </div>
-                                                   <div class="position-relative form-group"><label>Pemilik</label> <select class="form-control" name="pemilik???" style="margin-bottom: 10px;">
+                                                   <div class="position-relative form-group"><label>Pemilik</label> <select class="form-control" name="pemilikpku" style="margin-bottom: 10px;">
                                                            <option hidden>Pilih</option>
                                                            <option>Milik Sendiri</option>
                                                            <option>Sewa</option>
                                                        </select>
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Pemilik</label>
-                                                       <input type="text" name="pemilikpku" placeholder="Pemilik" class="form-control" id="pemilikpku" style="margin-bottom: 10px;">
-                                                   </div>
+
                                                    <div class="position-relative form-group"><label>Penyedia Data Centrer (Jika sewa)</label>
                                                        <input type="text" name="penyediadatacenter" placeholder="Penyedia Data Center" class="form-control" id="penyediadatacenter" style="margin-bottom: 10px;">
                                                    </div>
@@ -399,29 +400,24 @@
                                        <div class="col-md-10">
                                            <div class="main-card card">
                                                <div class="card-body">
-                                                   <h2 class="card-title mb-3 mt-4">Pengembang</h2>
-                                                   <div class="position-relative form-group"><label>Nama Pengembang</label>
-                                                       <input type="text" name="nama???" placeholder="Nama Pengembang" class="form-control" id="jenis" style="margin-bottom: 10px;">
-                                                   </div>
-                                                   <div class="position-relative form-group"><label>Nomor HP</label>
-                                                       <input type="text" name="nohp???" placeholder="Nomor HP" class="form-control" id="jml" style="margin-bottom: 10px;">
-                                                   </div>
-                                                   <div class="position-relative form-group"><label>OPD</label>
-                                                       <input type="text" name="opd???" placeholder="OPD" class="form-control" id="kompetensi" style="margin-bottom: 10px;">
-                                                   </div>
-                                                   <div class="position-relative form-group"><label>Alamat</label>
-                                                       <input type="text" name="alamat???" placeholder="Alamat" class="form-control" id="kompetensi" style="margin-bottom: 10px;">
-                                                   </div>
-                                                   <hr>
                                                    <h2 class="card-title mb-3 mt-4">Tenaga Ahli Yang dibutuhkan</h2>
-                                                   <div class="position-relative form-group"><label>Jenis Tenaga Ahli</label>
-                                                       <input type="text" name="jenis" placeholder="Jenis" class="form-control" id="jenis" style="margin-bottom: 10px;">
+                                                   <div class="position-relative form-group"><label>Nama </label>
+                                                       <input type="text" name="namata" placeholder="Nama Tenaga Ahli" class="form-control" id="jenis" style="margin-bottom: 10px;">
                                                    </div>
-                                                   <div class="position-relative form-group"><label>Jumlah</label>
-                                                       <input type="text" name="jml" placeholder="Jumlah" class="form-control" id="jml" style="margin-bottom: 10px;">
+                                                   <div class="position-relative form-group"><label>Jenis Tenaga Ahli</label>
+                                                       <input type="text" name="jenista" placeholder="Jenis" class="form-control" id="jenis" style="margin-bottom: 10px;">
                                                    </div>
                                                    <div class="position-relative form-group"><label>Kompetensi</label>
                                                        <input type="text" name="kompetensi" placeholder="Kompetensi" class="form-control" id="kompetensi" style="margin-bottom: 10px;">
+                                                   </div>
+                                                   <div class="position-relative form-group"><label>Nomor HP</label>
+                                                       <input type="text" name="nohpta" placeholder="Nomor HP" class="form-control" id="jml" style="margin-bottom: 10px;">
+                                                   </div>
+                                                   <div class="position-relative form-group"><label>OPD</label>
+                                                       <input type="text" name="opd" placeholder="OPD" class="form-control" id="kompetensi" style="margin-bottom: 10px;">
+                                                   </div>
+                                                   <div class="position-relative form-group"><label>Alamat</label>
+                                                       <input type="text" name="alamatta" placeholder="Alamat" class="form-control" id="kompetensi" style="margin-bottom: 10px;">
                                                    </div>
                                                    <hr>
                                                    <h2 class="card-title mb-3 mt-4">Ketersediaan Tenaga Ahli</h2>
@@ -436,7 +432,8 @@
                                                            <option>PNS</option>
                                                            <option>Non PNS</option>
                                                            <!-- <option>Jenis Layanan Lainnya</option> -->
-                                                       </select></div>
+                                                       </select>
+                                                   </div>
                                                </div>
                                            </div>
                                        </div>
@@ -596,3 +593,5 @@
 
                    });
                </script>
+               <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/jquery.js"></script>
+               <script type="text/javascript" src="<?= base_url('./assets/'); ?>baru/assets/scripts/rupiah.js"></script>
