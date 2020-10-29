@@ -177,6 +177,7 @@ class Upload extends CI_Controller
 
             $config['upload_path'] = $path_versi; //path folder
             $config['allowed_types'] = '*'; //type ekstensi file bisa disesuaikan
+            $config['max_size'] = '1024M'; //maks file size 1GB
 
             $this->upload->initialize($config);
             $this->load->library('upload', $config);
@@ -236,6 +237,10 @@ class Upload extends CI_Controller
                     $uploadData = $this->upload->data();
                     $lain = $uploadData['file_name'];
                 }
+            }
+            if (empty($_FILES['lain']['name'][$i])) {
+
+                $lain = "tidak ada file lainnya";
             }
             $this->m_upload->save2($idfile, $dir, $versi, $doc, $dbMaster, $sourceCode, $lain);
             $idfile++;

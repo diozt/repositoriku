@@ -413,15 +413,16 @@
                                             <hr>
                                             <h2 class="card-title mb-3 mt-4">Ketersediaan Tenaga Ahli</h2>
                                             <div class="position-relative form-group"><label>Jenis Tenaga Ahli</label>
-                                                <input type="text" name="ketersediaanjenis" placeholder="Jenis" class="form-control" id="ketersediaanjenis" style="margin-bottom: 10px;">
+                                                <input type="text" name="ketersediaanjenis" placeholder="Jenis" class="form-control" id="ketersediaanjenis" style="margin-bottom: 10px;" value="<?= $kta['jenis'] ?>">
                                             </div>
                                             <div class="position-relative form-group"><label>Jumlah Tenaga Ahli</label>
-                                                <input type="text" name="jmltersedia" placeholder="Jumlah" class="form-control" id="jmltersedia" style="margin-bottom: 10px;">
+                                                <input type="text" name="jmltersedia" placeholder="Jumlah" class="form-control" id="jmltersedia" style="margin-bottom: 10px;" value="<?= $kta['jumlah'] ?>">
                                             </div>
                                             <div class="position-relative form-group"><label>Status Tenaga Ahli Yang Tersedia</label> <select class="form-control" name="statustersedia" style="margin-bottom: 30px;">
                                                     <option hidden>Pilih</option>
-                                                    <option>PNS</option>
-                                                    <option>Non PNS</option>
+                                                    <option <?php if ($kta['status'] == "PNS") echo "selected"; ?>>PNS</option>
+                                                    <option <?php if ($kta['status'] == "Non PNS") echo "selected"; ?>>Non PNS</option>
+                                                    <!-- <option>Non PNS</option> -->
                                                     <!-- <option>Jenis Layanan Lainnya</option> -->
                                                 </select>
                                             </div>

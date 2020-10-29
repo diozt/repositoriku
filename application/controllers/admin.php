@@ -539,6 +539,9 @@ class admin extends CI_Controller
 
                 $config['upload_path'] = $path_versi; //path folder
                 $config['allowed_types'] = '*'; //type ekstensi file bisa disesuaikan
+                $config['max_size'] = '1000000'; //maks file size 10GB
+                $config['max_width']  = '1024000';
+                $config['max_height']  = '768000';
 
                 $this->upload->initialize($config);
                 $this->load->library('upload', $config);
@@ -598,6 +601,10 @@ class admin extends CI_Controller
                         $uploadData = $this->upload->data();
                         $lain = $uploadData['file_name'];
                     }
+                }
+                if (empty($_FILES['lain']['name'][$i])) {
+
+                    $lain = "tidak ada file lainnya";
                 }
                 $this->M_upload->save2($idfile, $dir, $versi, $doc, $dbMaster, $sourceCode, $lain);
                 $idfile++;
