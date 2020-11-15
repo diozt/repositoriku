@@ -194,7 +194,6 @@ class admin extends CI_Controller
         foreach ($iterator as $filename => $fileInfo) {
             if ($fileInfo->isDir()) {
                 rmdir($filename);
-                echo "woee";
             } else {
                 unlink($filename);
             }

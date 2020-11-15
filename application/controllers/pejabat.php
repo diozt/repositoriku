@@ -62,7 +62,7 @@ class pejabat extends CI_Controller
         $data["kta"] = $this->db->get_where('ketersediaanta', ['id' => $id])->row_array();
         $data["dh"] = $this->db->get_where('dasarhukum', ['id' => $id])->row_array();
         $data["sop"] = $this->db->get_where('sop', ['id' => $id])->row_array();
-        $data["pj"] = $this->db->get_where('penanggungjawab', ['nip' => $pj])->row_array();
+        $data["pj"] = $this->db->get_where('penanggungjawab', ['id' => $id])->row_array();
         $data["hd"] = $this->db->get_where('helpdesk', ['id' => $id])->row_array();
 
 

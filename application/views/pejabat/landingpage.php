@@ -36,8 +36,8 @@
                     <li class="mt-3">
                         <a href="#" class="btn-transition btn btn-outline-link">
                             <i class="metismenu-icon pe-7s-user"></i>
-                            <b class="text-primary mt-0"><?= $pejabat['username'] ?></b>
-                            , Pejabat
+                            <b class="text-primary mt-0">Hai <?= $pejabat['username'] ?></b>
+
                             <!-- <div class="mb-0 mt-3 fsize-1 text-primary"><b>John Doe</b></div>
                             <div class=""><b>Admin</b>, Kominfo</div> -->
                         </a>
