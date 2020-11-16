@@ -157,13 +157,15 @@ class admin extends CI_Controller
         $path = './upload/' . $folder . '/';
 
         // Add directory to zip
-        $this->zip->read_dir($path);
+        $this->zip->read_dir($path, false);
 
         // Save the zip file to archivefiles directory
-        $this->zip->archive($filename);
+        $this->zip->archive(FCPATH . '/archivefiles/' . $filename);
 
         // Download
         $this->zip->download($filename);
+
+
         redirect('admin/detail/' . $id . '/' . $folder, 'refresh');
     }
 
@@ -171,16 +173,18 @@ class admin extends CI_Controller
     {
         // %20 to space
         $folder = urldecode($folder);
-        // File name
-        $filename = $folder . ".zip";
+        $versi = urldecode($versi);
         // Directory path (uploads directory stored in project root)
-        $path = './upload/' . $folder . '/' . $versi . '/';
+        $path = 'upload/' . $folder . '/' . $versi . '/';
+
+        // File name
+        $filename = $versi . ".zip";
 
         // Add directory to zip
-        $this->zip->read_dir($path);
+        $this->zip->read_dir($path, false);
 
         // Save the zip file to archivefiles directory
-        $this->zip->archive($filename);
+        $this->zip->archive(FCPATH . '/archivefiles/' . $filename);
 
         // Download
         $this->zip->download($filename);
